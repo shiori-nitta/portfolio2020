@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>title</h1>
     <svg
       class="NuxtLogo"
       width="245"
@@ -24,6 +25,9 @@
 </template>
 
 <style lang="scss" scoped>
+h1 {
+  @include font-en-normal;
+}
 .NuxtLogo {
   animation: 1s appear;
   margin: auto;
