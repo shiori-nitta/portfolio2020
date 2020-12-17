@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 const rootPath = path.resolve(__dirname, '../src/')
 
 module.exports = {
@@ -10,8 +10,23 @@ module.exports = {
     // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../'),
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+        },
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: [
+              path.resolve(__dirname, '../src/assets/scss/variables.scss'),
+              path.resolve(__dirname, '../src/assets/scss/mixins.scss'),
+              path.resolve(__dirname, '../src/assets/scss/reset.scss'),
+            ],
+          }
+        }
+      ]
     });
 
     config.resolve.extensions = ['.js', '.vue', '.json']
