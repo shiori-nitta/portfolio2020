@@ -112,10 +112,6 @@
 
 <style lang="scss" scoped>
 .logo {
-  // width: 85px;
-  // @include media(md, max) {
-  //   width: 26px;
-  // }
   svg {
     width: 100%;
   }
