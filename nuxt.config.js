@@ -46,13 +46,21 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
 
   // WebFont
   webfontloader: {
     google: {
       families: ['Noto+Sans+JP:wght@400;700'],
     },
+  },
+
+  styleResources: {
+    scss: [
+      '@/assets/scss/variables.scss',
+      '@/assets/scss/mixins.scss',
+      '@/assets/scss/reset.scss',
+    ],
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
