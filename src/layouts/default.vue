@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    this.$nextTick(function () {
+      this.$adobeFonts(document)
+    })
+  },
+}
+</script>
+
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -15,6 +25,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  /* webfontチラツキ防止 */
+  visibility: hidden;
+}
+html.wf-active {
+  /* webfontチラツキ防止 */
+  visibility: visible;
 }
 
 *,
