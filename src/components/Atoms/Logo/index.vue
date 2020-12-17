@@ -26,7 +26,7 @@
 
 <style lang="scss" scoped>
 h1 {
-  @include font-en-normal;
+  // @include font-en-normal;
 }
 .NuxtLogo {
   animation: 1s appear;
