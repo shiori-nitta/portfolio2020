@@ -112,16 +112,32 @@
 }
 .animation04 {
   opacity: 0;
-  animation: animation 0.2s 0.8s forwards;
+  animation: fade-in 0.6s 0.9s ease forwards;
 }
 @keyframes animation {
   0% {
     opacity: 0;
     transform: translate(-10px, -10px);
   }
+  50% {
+    opacity: 40%;
+  }
   100% {
     opacity: 100%;
     transform: translate(0px, 0px);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
   }
 }
 </style>
