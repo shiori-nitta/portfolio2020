@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" @click="onClick">
     <div class="pc">
       <svg viewBox="0 0 87 26">
         <title>soda</title>
@@ -109,6 +109,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    onClick() {
+      this.$emit('onClick')
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .logo {
