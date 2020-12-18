@@ -42,6 +42,7 @@ export default {
   align-items: center;
   @include media(md, max) {
     flex-direction: column;
+    align-items: flex-start;
   }
   &__thumb {
     width: 20%;
