@@ -8,5 +8,5 @@ export default {
 export const $default = (argTypes) => ({
   props: Object.keys(argTypes),
   components: { Navigation },
-  template: '<navigation @onClick="onClick" />',
+  template: '<navigation />',
 })
