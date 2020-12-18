@@ -20,6 +20,9 @@
     &:not(:first-child) {
       margin-left: 20px;
     }
+    @include media(md, max) {
+      font-size: 1.4rem;
+    }
   }
   &__link {
     padding: 10px 0;
