@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link class="page-next" @click="onClick">
+  <button class="page-next" @click="onClick">
     <div class="page-next__icon"><icon-arrow-right /></div>
     <pager-content :src="src" :alt="alt" progress="Next" :title="title" />
-  </nuxt-link>
+  </button>
 </template>
 
 <script>
@@ -41,9 +41,10 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  max-width: 400px;
   width: 100%;
   padding: 10px 0;
+  background: none;
+  border: none;
   cursor: pointer;
   position: relative;
   transition: all 0.7s ease;

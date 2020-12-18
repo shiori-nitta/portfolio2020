@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link class="page-previous" @click="onClick">
+  <button class="page-previous" @click="onClick">
     <div class="page-previous__icon"><icon-arrow-left /></div>
     <pager-content :src="src" :alt="alt" progress="Previous" :title="title" />
-  </nuxt-link>
+  </button>
 </template>
 
 <script>
@@ -40,9 +40,10 @@ export default {
 .page-previous {
   display: flex;
   align-items: center;
-  max-width: 400px;
   width: 100%;
   padding: 10px 0;
+  background: none;
+  border: none;
   cursor: pointer;
   position: relative;
   transition: all 0.7s ease;
