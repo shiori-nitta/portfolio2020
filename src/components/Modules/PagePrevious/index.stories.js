@@ -1,8 +1,8 @@
-import Previous from './index.vue'
+import PagePrevious from './index.vue'
 
 export default {
-  title: 'Modules/Previous',
-  component: Previous,
+  title: 'Modules/PagePrevious',
+  component: PagePrevious,
   argTypes: {
     onClick: { action: 'clicked' },
   },
@@ -10,8 +10,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Previous },
-  template: '<Previous v-bind="$props" @onClick="onClick" />',
+  components: { PagePrevious },
+  template: '<page-previous v-bind="$props" @onClick="onClick" />',
 })
 
 export const Default = Template.bind({})
