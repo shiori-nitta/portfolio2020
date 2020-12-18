@@ -4,7 +4,7 @@
       <img :src="src" :alt="alt" />
     </figure>
     <div class="pager-content__inner">
-      <p class="pager-content__control">{{ progress }}</p>
+      <p class="pager-content__progress">{{ progress }}</p>
       <p class="pager-content__title">{{ title }}</p>
     </div>
   </div>
@@ -40,16 +40,26 @@ export default {
 .pager-content {
   display: flex;
   align-items: center;
+  @include media(md, max) {
+    flex-direction: column;
+  }
   &__thumb {
     width: 20%;
+    @include media(md, max) {
+      width: 100%;
+    }
     img {
       width: 100%;
     }
   }
   &__inner {
-    margin-left: 20px;
+    margin: 0 0 0 20px;
+    @include media(md, max) {
+      width: 100%;
+      margin: 8px 0 0;
+    }
   }
-  &__control {
+  &__progress {
     font-size: 1.2rem;
     color: $text-color;
     @include font-en-bold;
@@ -59,6 +69,9 @@ export default {
     font-size: 1.4rem;
     color: $text-color;
     @include font-en-bold;
+    @include media(md, max) {
+      margin-top: 8px;
+    }
   }
 }
 </style>
