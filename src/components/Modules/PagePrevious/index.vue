@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link class="previous" @click="onClick">
-    <div class="previous__icon"><icon-arrow-left /></div>
+  <nuxt-link class="page-previous" @click="onClick">
+    <div class="page-previous__icon"><icon-arrow-left /></div>
     <pager-content :src="src" :alt="alt" progress="Previous" :title="title" />
   </nuxt-link>
 </template>
@@ -37,11 +37,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.previous {
+.page-previous {
   display: flex;
   align-items: center;
   max-width: 400px;
   width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.7s ease;
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: $text-color;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: bottom right;
+    }
+  }
   &__icon {
     width: 24px;
     height: 24px;
