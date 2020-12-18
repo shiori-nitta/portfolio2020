@@ -43,6 +43,29 @@ export default {
   flex-direction: row-reverse;
   max-width: 400px;
   width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.7s ease;
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: $text-color;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: bottom right;
+    }
+  }
   &__icon {
     width: 24px;
     height: 24px;
