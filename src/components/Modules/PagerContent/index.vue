@@ -64,12 +64,14 @@ export default {
     font-size: 1.2rem;
     color: $text-color;
     @include font-en-bold;
+    text-align: left;
   }
   &__title {
     margin-top: 12px;
     font-size: 1.4rem;
     color: $text-color;
     @include font-en-bold;
+    text-align: left;
     @include media(md, max) {
       margin-top: 8px;
     }
