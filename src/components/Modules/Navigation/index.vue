@@ -2,7 +2,7 @@
   <nav class="navigation">
     <ul class="navigation-list">
       <li class="navigation-list__item">
-        <nuxt-link class="navigation-list__link" to="/">About</nuxt-link>
+        <nuxt-link class="navigation-list__link" to="/about">About</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -27,6 +27,7 @@
   &__link {
     padding: 10px 0;
     color: $text-color;
+    text-decoration: none;
     cursor: pointer;
     position: relative;
     &::before {
