@@ -37,12 +37,12 @@ export default {
 .work-card {
   width: 100%;
   display: block;
-  box-shadow: 2px 2px 2px rgba(176, 233, 233, 1);
+  box-shadow: 2px 2px 2px darken($bg-color, 10%);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.1s linear;
   &:hover {
-    box-shadow: 8px 8px 16px rgba(176, 233, 233, 1);
+    box-shadow: 8px 8px 16px darken($bg-color, 10%);
     transform: translate(-4px, -4px);
   }
   &__thumb {

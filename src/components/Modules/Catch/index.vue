@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .catch {
   width: 100%;
-  padding: 160px 40px;
+  padding: 80px 40px 160px;
   @include media(md, max) {
     padding: 120px 24px;
   }
