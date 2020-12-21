@@ -16,6 +16,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = {
+  to: '/',
   src: 'images/work-image.png',
   alt: '作品イメージです',
   title: '#001 Profile',
