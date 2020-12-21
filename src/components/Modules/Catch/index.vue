@@ -36,6 +36,7 @@ export default {
     text-align: center;
     color: $text-color;
     @include font-en-bold;
+    letter-spacing: 0.1em;
     @include media(md, max) {
       font-size: 1.4rem;
     }
