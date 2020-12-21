@@ -40,10 +40,10 @@ export default {
   box-shadow: 2px 2px 2px rgba(176, 233, 233, 1);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.1s linear;
   &:hover {
-    box-shadow: 4px 4px 12px rgba(176, 233, 233, 1);
-    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 16px rgba(176, 233, 233, 1);
+    transform: translate(-4px, -4px);
   }
   &__thumb {
     border: 2px solid $white-color;
