@@ -19,6 +19,70 @@ export default {
     this.$nextTick(function () {
       this.$adobeFonts(document)
     })
+    let q = document.createElement('div')
+    q.innerHTML =
+      '<style>.bubble{position:fixed;background:rgba(255,255,255,0.1);border:thin solid rgba(255,255,255,0.7);border-radius:100%;box-shadow: 0 0 3px 1px rgba(255,255,255,0.4);overflow:hidden;}' +
+      '.bubble::after{content:“”;display:block;height:5px;width:5px;border-radius:2px;background:rgba(255,255,255,0.7);}</style>'
+    q.id = 'bubbleparticle'
+    document.body.appendChild(q)
+    q = document.getElementById('bubbleparticle')
+    const h = window.innerHeight
+    const u = document.documentElement.scrollTop || document.body.scrollTop
+    const z = -9999
+    const t = []
+    const l = []
+    const y = []
+    const s = []
+    const g = []
+    const c = []
+    for (let i = 0; i < 40; i++) {
+      const m = document.createElement('div')
+      m.id = 'awa' + i
+      t[i] = Math.random() * (h + u) + u
+      l[i] = Math.random() * window.innerWidth
+      const p = Math.random() * 8 + 6
+      m.setAttribute(
+        'style',
+        'z-index:' +
+          (z + i) +
+          ';top:' +
+          t[i] +
+          'px;width:' +
+          p +
+          'px;height:' +
+          p +
+          'px;left:' +
+          l +
+          'px;'
+      )
+      m.setAttribute('class', 'bubble')
+      q.appendChild(m)
+      y[i] = Math.random() * 25 + 0.1
+      s[i] = Math.random() * 5 + 12
+      g[i] = document.getElementById('awa' + i)
+      c[i] = 0
+    }
+    setInterval(function () {
+      for (let i = 0; i < 30; i++) {
+        if (u < t[i]) {
+          if (y[i] >= c[i]) {
+            l[i] = l[i] + 0.5 + Math.random() * 0.5
+          } else {
+            l[i] = l[i] - 0.5 - Math.random() * 0.5
+          }
+          if (y[i] * 2 <= c[i]) {
+            c[i] = 0
+          }
+        } else {
+          t[i] = u + h + 10
+          l[i] = Math.random() * window.innerWidth
+        }
+        t[i] = t[i] - s[i]
+        g[i].style.top = t[i] + 'px'
+        g[i].style.left = l[i] + 'px'
+        c[i]++
+      }
+    }, 50)
   },
 }
 </script>
@@ -26,7 +90,7 @@ export default {
 <style lang="scss">
 html {
   font-size: 62.5%;
-  background: $bg-color;
+  background: linear-gradient($bg-color, darken($bg-color, 5%));
   /* webfontチラツキ防止 */
   visibility: hidden;
 }
