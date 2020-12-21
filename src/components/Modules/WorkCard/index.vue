@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="work-card" @click="onClick">
+  <nuxt-link :to="to" class="work-card">
     <figure class="work-card__thumb">
       <img :src="src" :alt="alt" />
     </figure>
@@ -13,6 +13,10 @@
 <script>
 export default {
   props: {
+    to: {
+      type: String,
+      required: true,
+    },
     src: {
       type: String,
       required: true,
@@ -26,11 +30,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    onClick() {
-      this.$emit('onClick')
-    },
-  },
 }
 </script>
 
@@ -39,6 +38,7 @@ export default {
   width: 100%;
   display: block;
   box-shadow: 2px 2px 2px rgba(176, 233, 233, 1);
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {

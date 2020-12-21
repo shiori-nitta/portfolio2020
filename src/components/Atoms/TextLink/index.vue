@@ -1,12 +1,13 @@
 <template>
-  <nuxt-link to="/" class="text-link" @click="onClick"><slot></slot></nuxt-link>
+  <nuxt-link :to="to" class="text-link"><slot></slot></nuxt-link>
 </template>
 
 <script>
 export default {
-  methods: {
-    onClick() {
-      this.$emit('onClick')
+  props: {
+    to: {
+      type: String,
+      required: true,
     },
   },
 }
@@ -17,6 +18,7 @@ export default {
   font-size: 1.4rem;
   line-height: 1.6;
   color: $link-color;
+  text-decoration: none;
   position: relative;
   &::before {
     display: block;

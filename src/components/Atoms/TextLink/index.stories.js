@@ -3,13 +3,15 @@ import TextLink from './index.vue'
 export default {
   title: 'Atoms/TextLink',
   components: TextLink,
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
 }
 
-export const $default = (argTypes) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { TextLink },
-  template: '<text-link @onClick="onClick">テキストリンク</text-link>',
+  template: '<text-link v-bind="$props">テキストリンク</text-link>',
 })
+
+export const Default = Template.bind({})
+Default.args = {
+  to: 'https://nuxtjs.org',
+}
