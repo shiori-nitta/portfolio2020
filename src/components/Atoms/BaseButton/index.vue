@@ -13,8 +13,8 @@ export default {
   computed: {
     classes() {
       return {
-        button: true,
-        [`button--${this.size}`]: true,
+        [`base-button`]: true,
+        [`base-button--${this.size}`]: true,
       }
     },
   },
@@ -27,12 +27,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button {
-  display: flex;
+.base-button {
   background: $primary-color;
   color: $white-color;
   text-align: center;
   font-weight: bold;
+  @include font-bold;
   border: 2px solid $primary-color;
   border-radius: 4px;
   overflow: hidden;
