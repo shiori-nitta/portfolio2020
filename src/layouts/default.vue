@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header @onClick="toTop" />
     <Nuxt />
     <Footer />
   </div>
@@ -83,6 +83,11 @@ export default {
         c[i]++
       }
     }, 50)
+  },
+  methods: {
+    toTop() {
+      return this.$router.push(`/`)
+    },
   },
 }
 </script>
