@@ -63,7 +63,6 @@ export default {
   &:hover {
     &::before {
       transform: scaleX(1);
-      transform-origin: bottom right;
     }
   }
   &__icon {

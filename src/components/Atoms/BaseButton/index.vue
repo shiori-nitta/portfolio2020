@@ -39,6 +39,7 @@ export default {
   cursor: pointer;
   position: relative;
   z-index: 0;
+  backface-visibility: hidden;
   transition: all 0.3s ease;
   &::before {
     display: block;
@@ -58,7 +59,6 @@ export default {
     color: $primary-color;
     &::before {
       transform: scaleX(1);
-      transform-origin: bottom right;
     }
   }
   &--small {
