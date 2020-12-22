@@ -105,4 +105,10 @@ html.wf-active {
   box-sizing: border-box;
   margin: 0;
 }
+
+body {
+  font-size: 1.4rem;
+  @include font-normal;
+  color: $text-color;
+}
 </style>
