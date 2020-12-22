@@ -4,13 +4,12 @@
     <div class="l-card">
       <card-list>
         <work-card
-          v-for="item in items"
-          :id="item.id"
-          :key="item.id"
-          :to="item.to"
-          :src="item.src"
-          :alt="item.alt"
-          :title="item.title"
+          v-for="(post, i) in posts"
+          :key="i"
+          :to="post.fields.slug"
+          :src="post.fields.headerImage.fields.file.url"
+          :alt="post.fields.title"
+          :title="post.fields.title"
         />
       </card-list>
     </div>
@@ -18,15 +17,29 @@
 </template>
 
 <script>
-import Catch from '../components/Modules/Catch'
-import WorkCard from '../components/Modules/WorkCard'
-import CardList from '../components/Organisms/CardList'
+import Catch from '~/components/Modules/Catch'
+import WorkCard from '~/components/Modules/WorkCard'
+import CardList from '~/components/Organisms/CardList'
+import client from '~/plugins/contentful.js'
 
 export default {
   components: {
     Catch,
     WorkCard,
     CardList,
+  },
+  async asyncData({ env }) {
+    return await client
+      .getEntries({
+        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        order: '-sys.createdAt',
+      })
+      .then((res) => {
+        return {
+          posts: res.items,
+        }
+      })
+      .catch(console.error)
   },
   data() {
     return {
