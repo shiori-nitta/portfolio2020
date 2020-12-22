@@ -57,17 +57,11 @@ export default {
     Pager,
   },
   methods: {
-    toTwitter() {
-      const url = 'https://twitter.com/T0SH1KO'
-      window.location.href = url
+    onClickPrev() {
+      return console.info('前のページに移動')
     },
-    toBook() {
-      const url = 'https://booklog.jp/users/cossmos'
-      window.location.href = url
-    },
-    toMovie() {
-      const url = 'https://filmarks.com/users/so00da'
-      window.location.href = url
+    onClickNext() {
+      return console.info('次のページに移動')
     },
     toTop() {
       return this.$router.push(`/`)
