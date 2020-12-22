@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <logo @onClick="onClick" />
+    <h1><logo @onClick="onClick" /></h1>
     <navigation />
   </header>
 </template>

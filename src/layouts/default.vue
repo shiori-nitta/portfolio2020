@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header @onClick="toTop" />
     <Nuxt />
     <Footer />
   </div>
@@ -84,6 +84,11 @@ export default {
       }
     }, 50)
   },
+  methods: {
+    toTop() {
+      return this.$router.push(`/`)
+    },
+  },
 }
 </script>
 
@@ -104,5 +109,11 @@ html.wf-active {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  font-size: 1.4rem;
+  @include font-normal;
+  color: $text-color;
 }
 </style>

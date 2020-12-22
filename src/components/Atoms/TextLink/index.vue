@@ -1,13 +1,12 @@
 <template>
-  <nuxt-link :to="to" class="text-link"><slot></slot></nuxt-link>
+  <button class="text-link" @click="onClick"><slot></slot></button>
 </template>
 
 <script>
 export default {
-  props: {
-    to: {
-      type: String,
-      required: true,
+  methods: {
+    onClick() {
+      this.$emit('onClick')
     },
   },
 }
@@ -15,10 +14,13 @@ export default {
 
 <style lang="scss" scoped>
 .text-link {
+  padding: 0;
   font-size: 1.4rem;
   line-height: 1.6;
   color: $link-color;
   text-decoration: none;
+  border: none;
+  background: transparent;
   position: relative;
   &::before {
     display: block;

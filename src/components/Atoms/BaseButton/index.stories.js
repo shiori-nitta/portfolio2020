@@ -1,7 +1,7 @@
 import BaseButton from './index.vue'
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/BaseButton',
   components: BaseButton,
   argTypes: {
     size: {
