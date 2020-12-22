@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import WorkImage from '../components/Atoms/WorkImage'
-import BaseButton from '../components/Atoms/BaseButton'
-import Pager from '../components/Organisms/Pager'
+import WorkImage from '~/components/Atoms/WorkImage'
+import BaseButton from '~/components/Atoms/BaseButton'
+import Pager from '~/components/Organisms/Pager'
 
 export default {
   components: {

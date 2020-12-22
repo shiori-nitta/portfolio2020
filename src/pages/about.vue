@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import UserIcon from '../components/Atoms/UserIcon'
-import BaseButton from '../components/Atoms/BaseButton'
-import TextLink from '../components/Atoms/TextLink'
+import UserIcon from '~/components/Atoms/UserIcon'
+import BaseButton from '~/components/Atoms/BaseButton'
+import TextLink from '~/components/Atoms/TextLink'
 
 export default {
   components: {
