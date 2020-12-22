@@ -62,7 +62,7 @@ export default {
   }
   &__title {
     margin: 12px 0 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: $text-color;
     @include font-en-bold;
   }

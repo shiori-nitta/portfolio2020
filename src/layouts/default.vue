@@ -112,7 +112,7 @@ html.wf-active {
 }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   @include font-normal;
   color: $text-color;
 }

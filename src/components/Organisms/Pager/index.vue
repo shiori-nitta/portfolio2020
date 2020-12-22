@@ -11,7 +11,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  > * {
+  .page-previous,
+  .page-next {
     width: calc((100% - 40px) / 2);
     @include media(md, max) {
       width: calc((100% - 20px) / 2);

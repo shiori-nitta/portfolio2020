@@ -3,7 +3,7 @@
     <div class="l-wrap">
       <div class="l-content flex-column">
         <user-icon :src="require('@/assets/images/user-icon.png')" />
-        <section class="section">
+        <section class="l-section">
           <h2 class="user-name">ソーダー</h2>
           <p class="text">
             都内で働くWebデザイナー。現在リモートワーク中。このサイトはDaily
@@ -25,7 +25,9 @@
             </dl>
           </div>
         </section>
-        <base-button size="medium" @onClick="toTop">ホームに戻る</base-button>
+        <div class="l-home-button">
+          <base-button size="medium" @onClick="toTop">ホームに戻る</base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -83,6 +85,9 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.l-section {
+  width: 100%;
+}
 .user-icon {
   margin-top: -160px;
   @include media(md, max) {
@@ -100,6 +105,12 @@ export default {
 .text {
   margin: 20px 0;
   line-height: 2;
+}
+.l-home-button {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 .base-button {
   max-width: 240px;
