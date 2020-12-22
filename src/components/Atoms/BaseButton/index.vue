@@ -67,11 +67,11 @@ export default {
   }
   &--medium {
     padding: 20px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   &--large {
     padding: 30px;
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 </style>

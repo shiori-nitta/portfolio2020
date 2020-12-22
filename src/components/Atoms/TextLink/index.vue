@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .text-link {
   padding: 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: $link-color;
   text-decoration: none;
