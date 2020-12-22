@@ -1,12 +1,19 @@
 <template>
   <div class="user-icon">
-    <img
-      src="images/user-icon.png"
-      alt="管理者アイコン"
-      class="user-icon__image"
-    />
+    <img :src="src" alt="管理者アイコン" class="user-icon__image" />
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    src: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .user-icon {
