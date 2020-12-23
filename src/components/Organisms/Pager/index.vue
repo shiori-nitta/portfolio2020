@@ -18,5 +18,8 @@
       width: calc((100% - 20px) / 2);
     }
   }
+  .page-next {
+    margin-left: auto;
+  }
 }
 </style>
