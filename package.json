@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/markdownit": "^1.2.10",
     "contentful": "^8.1.4",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
