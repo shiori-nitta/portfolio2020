@@ -11,9 +11,7 @@
             <span class="works-name__category">DailyUI</span>
             <span class="works-name__title">{{ post.fields.title }}</span>
           </h2>
-          <p class="text">
-            {{ post.fields.body }}
-          </p>
+          <div class="text-area" v-html="$md.render(post.fields.body)"></div>
         </section>
         <Pager>
           <page-previous
@@ -127,7 +125,7 @@ export default {
     font-size: 2rem;
   }
 }
-.text {
+.text-area {
   margin: 20px 0;
   line-height: 2;
 }

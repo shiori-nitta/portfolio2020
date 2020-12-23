@@ -49,7 +49,12 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader', '@nuxtjs/dotenv'],
+  modules: [
+    '@nuxtjs/style-resources',
+    'nuxt-webfontloader',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
+  ],
 
   // WebFont
   webfontloader: {
@@ -89,5 +94,11 @@ export default {
         ]
       })
     },
+  },
+  markdownit: {
+    injected: true, // 「$md」でどこからでも使えるようにする
+    breaks: true, // 改行を<br/>に変換する
+    html: true, // HTML タグを有効にする
+    linkify: true, // URLに似たテキストをリンクに自動変換する
   },
 }
