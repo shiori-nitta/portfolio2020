@@ -24,14 +24,14 @@
             :src="prevPost.fields.headerImage.fields.file.url"
             :alt="prevPost.fields.title"
             :title="prevPost.fields.title"
-            @onClick="onClickPrev"
+            :to="prevPost.fields.slug"
           />
           <page-next
             v-if="nextPost"
             :src="nextPost.fields.headerImage.fields.file.url"
             :alt="nextPost.fields.title"
             :title="nextPost.fields.title"
-            @onClick="onClickNext"
+            :to="nextPost.fields.slug"
           />
         </Pager>
         <div class="l-home-button">
@@ -77,12 +77,6 @@ export default {
     return error({ statusCode: 400 })
   },
   methods: {
-    onClickPrev() {
-      return this.$router.push(`/dailyui/${this.prevPost.fields.slug}`)
-    },
-    onClickNext() {
-      return this.$router.push(`/dailyui/${this.nextPost.fields.slug}`)
-    },
     toTop() {
       return this.$router.push(`/`)
     },

@@ -1,8 +1,8 @@
 <template>
-  <button class="page-next" @click="onClick">
+  <nuxt-link :to="to" class="page-next">
     <div class="page-next__icon"><icon-arrow-right /></div>
     <pager-content :src="src" :alt="alt" progress="Next" :title="title" />
-  </button>
+  </nuxt-link>
 </template>
 
 <script>
@@ -27,10 +27,9 @@ export default {
       type: String,
       required: true,
     },
-  },
-  methods: {
-    onClick() {
-      this.$emit('onClick')
+    to: {
+      type: String,
+      required: true,
     },
   },
 }
@@ -45,6 +44,8 @@ export default {
   padding: 10px 0;
   background: none;
   border: none;
+  text-decoration: none;
+  color: $text-color;
   cursor: pointer;
   position: relative;
   transition: all 0.7s ease;
