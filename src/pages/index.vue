@@ -6,7 +6,7 @@
         <work-card
           v-for="(post, i) in posts"
           :key="i"
-          :to="post.fields.slug"
+          :to="'dailyui/' + post.fields.slug"
           :src="post.fields.headerImage.fields.file.url"
           :alt="post.fields.title"
           :title="post.fields.title"
