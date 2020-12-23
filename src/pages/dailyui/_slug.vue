@@ -3,24 +3,16 @@
     <div class="l-wrap">
       <div class="l-content flex-column">
         <work-image
-          :src="require('@/assets/images/work-image.png')"
-          alt="作品イメージです"
+          :src="post.fields.headerImage.fields.file.url"
+          :alt="post.fields.title"
         />
         <section class="l-section l-works">
           <h2 class="works-name">
             <span class="works-name__category">DailyUI</span>
-            <span class="works-name__title">#001 Profile</span>
+            <span class="works-name__title">{{ post.fields.title }}</span>
           </h2>
           <p class="text">
-            まずはどういったアプリのSignUp画面なのかを考える必要があったので、今回は「家計簿アプリ」で設定。<br />
-            <br />
-            家計簿アプリはかっちりしたアプリが多いイメージだったので親しみがもてるライトな家計簿アプリを想定。<br />
-            ターゲットは主婦層などの女性。<br />
-            <br />
-            家計簿 → 財布 → がま口 →かえる🐸<br />
-            かえるのキャラクターを採用<br />
-            <br />
-            ワイヤーなど設計する時点で必要な要素の選出やテキストの内容も考えるようだったので想像してたより時間がかかった。。
+            {{ post.fields.body }}
           </p>
         </section>
         <Pager>
@@ -49,6 +41,7 @@
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
+import client from '~/plugins/contentful.js'
 
 export default {
   components: {
@@ -56,8 +49,19 @@ export default {
     BaseButton,
     Pager,
   },
-  asyncData({ payload }) {
-    if (payload) return { currentPost: payload }
+  async asyncData({ env, params }) {
+    return await client
+      .getEntries({
+        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        'fields.slug': params.slug,
+        order: '-sys.createdAt',
+      })
+      .then((entries) => {
+        return {
+          post: entries.items[0],
+        }
+      })
+      .catch(console.error)
   },
   methods: {
     onClickPrev() {
