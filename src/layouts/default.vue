@@ -116,4 +116,23 @@ body {
   @include font-normal;
   color: $text-color;
 }
+
+.page-enter-active {
+  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+    filter 0.6s ease, transform 0.6s ease;
+}
+.page-leave-active {
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.3s ease;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(5px);
+}
+.page-enter {
+  transform: translateY(20px);
+}
+.page-leave-to {
+  transform: translateY(-20px);
+}
 </style>
