@@ -101,4 +101,7 @@ export default {
     html: true, // HTML タグを有効にする
     linkify: true, // URLに似たテキストをリンクに自動変換する
   },
+  router: {
+    middleware: ['getContentful'],
+  },
 }
