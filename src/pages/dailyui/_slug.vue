@@ -3,15 +3,20 @@
     <div class="l-wrap">
       <div class="l-content flex-column">
         <work-image
-          :src="post.fields.headerImage.fields.file.url"
-          :alt="post.fields.title"
+          :src="currentPost.fields.headerImage.fields.file.url"
+          :alt="currentPost.fields.title"
         />
         <section class="l-section l-works">
           <h2 class="works-name">
             <span class="works-name__category">DailyUI</span>
-            <span class="works-name__title">{{ post.fields.title }}</span>
+            <span class="works-name__title">{{
+              currentPost.fields.title
+            }}</span>
           </h2>
-          <div class="text-area" v-html="$md.render(post.fields.body)"></div>
+          <div
+            class="text-area"
+            v-html="$md.render(currentPost.fields.body)"
+          ></div>
         </section>
         <Pager>
           <page-previous
@@ -39,7 +44,6 @@
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
-import client from '~/plugins/contentful.js'
 
 export default {
   components: {
@@ -47,19 +51,15 @@ export default {
     BaseButton,
     Pager,
   },
-  async asyncData({ env, params }) {
-    return await client
-      .getEntries({
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
-        'fields.slug': params.slug,
-        order: '-sys.createdAt',
-      })
-      .then((entries) => {
-        return {
-          post: entries.items[0],
-        }
-      })
-      .catch(console.error)
+  async asyncData({ payload, store, params, error }) {
+    const currentPost =
+      payload ||
+      (await store.state.posts.find((post) => post.fields.slug === params.slug))
+    if (currentPost) {
+      return { currentPost }
+    } else {
+      return error({ statusCode: 400 })
+    }
   },
   methods: {
     onClickPrev() {
