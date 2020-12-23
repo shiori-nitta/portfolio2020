@@ -20,15 +20,17 @@
         </section>
         <Pager>
           <page-previous
-            :src="require('@/assets/images/work-image.png')"
-            alt="作品イメージです"
-            title="#002 Credit Card Checkout"
+            v-if="prevPost"
+            :src="prevPost.fields.headerImage.fields.file.url"
+            :alt="prevPost.fields.title"
+            :title="prevPost.fields.title"
             @onClick="onClickPrev"
           />
           <page-next
-            :src="require('@/assets/images/work-image.png')"
-            alt="作品イメージです"
-            title="#003 LandingPage"
+            v-if="nextPost"
+            :src="nextPost.fields.headerImage.fields.file.url"
+            :alt="nextPost.fields.title"
+            :title="nextPost.fields.title"
             @onClick="onClickNext"
           />
         </Pager>
@@ -55,18 +57,31 @@ export default {
     const currentPost =
       payload ||
       (await store.state.posts.find((post) => post.fields.slug === params.slug))
-    if (currentPost) {
-      return { currentPost }
-    } else {
-      return error({ statusCode: 400 })
+    const indexPost =
+      payload ||
+      (await store.state.posts.findIndex(
+        (post) => post.fields.slug === currentPost.fields.slug
+      ))
+    const length = payload || (await store.state.posts.length)
+    const prev = indexPost - 1
+    const next = indexPost + 1
+    const prevPost = store.state.posts[prev]
+    const nextPost = store.state.posts[next]
+    if ((currentPost, prevPost, nextPost)) {
+      return { currentPost, prevPost, nextPost }
     }
+    if ((currentPost, next === length)) {
+      // 一番古い記事も400になるので救済
+      return { currentPost, prevPost, nextPost }
+    }
+    return error({ statusCode: 400 })
   },
   methods: {
     onClickPrev() {
-      return console.info('前のページに移動')
+      return this.$router.push(`/dailyui/${this.prevPost.fields.slug}`)
     },
     onClickNext() {
-      return console.info('次のページに移動')
+      return this.$router.push(`/dailyui/${this.nextPost.fields.slug}`)
     },
     toTop() {
       return this.$router.push(`/`)
