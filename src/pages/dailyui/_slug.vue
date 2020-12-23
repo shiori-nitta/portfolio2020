@@ -57,14 +57,14 @@ export default {
     const currentPost =
       payload ||
       (await store.state.posts.find((post) => post.fields.slug === params.slug))
-    const indexPost =
+    const index =
       payload ||
       (await store.state.posts.findIndex(
         (post) => post.fields.slug === currentPost.fields.slug
       ))
     const length = payload || (await store.state.posts.length)
-    const prev = indexPost - 1
-    const next = indexPost + 1
+    const prev = index - 1
+    const next = index + 1
     const prevPost = store.state.posts[prev]
     const nextPost = store.state.posts[next]
     if ((currentPost, prevPost, nextPost)) {
