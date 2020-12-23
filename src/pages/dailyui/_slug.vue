@@ -128,6 +128,61 @@ export default {
 .text-area {
   margin: 20px 0;
   line-height: 2;
+  h1 {
+    font-size: 1.8rem;
+    padding-left: 16px;
+    margin-top: 40px;
+    border-left: 2px solid $text-color;
+  }
+  h2 {
+    font-size: 1.6rem;
+    display: flex;
+    &::before {
+      display: block;
+      content: '●';
+      margin-right: 8px;
+    }
+  }
+  p {
+    margin: 20px 0;
+  }
+  a {
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: $link-color;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    position: relative;
+    &::before {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: $link-color;
+      transform: scaleX(0);
+      transform-origin: bottom left;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+  ul {
+    margin: 20px 0;
+    padding-left: 24px;
+  }
+  blockquote {
+    padding: 10px 30px;
+    background: lighten($text-color, 75%);
+    border-radius: 4px;
+  }
 }
 .pager {
   margin: 40px 0;
