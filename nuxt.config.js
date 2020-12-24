@@ -1,6 +1,7 @@
 require('dotenv').config()
 const client = require('./src/plugins/contentful').default
 
+const baseTitle = `SODA | WebDesigner's portfolio`
 const baseDesc = 'webデザイナーのDailyUIをまとめたポートフォリオサイト'
 
 export default {
@@ -10,7 +11,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'portfolio2020',
+    title: baseTitle,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -22,7 +23,7 @@ export default {
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'HotPepper Position App',
+        content: baseTitle,
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
@@ -33,7 +34,7 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: `SODA | WebDesigner's portfolio`,
+        content: baseTitle,
       },
       {
         hid: 'og:description',
