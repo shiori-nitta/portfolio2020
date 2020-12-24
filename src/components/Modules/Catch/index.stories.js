@@ -5,8 +5,14 @@ export default {
   component: Catch,
 }
 
-export const $default = (argTypes) => ({
+const Template = (argTypes) => ({
   props: Object.keys(argTypes),
   components: { Catch },
-  template: '<Catch />',
+  template: '<Catch v-bind="$props" />',
 })
+
+export const Default = Template.bind({})
+Default.args = {
+  typo_src: 'images/logo.svg',
+  circle_src: 'images/logo-circle.svg',
+}
