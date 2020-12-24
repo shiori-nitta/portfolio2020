@@ -1,6 +1,8 @@
 <template>
   <div class="catch">
-    <div class="catch__title"><catch-image /></div>
+    <div class="catch__title">
+      <catch-image :typo_src="typo_src" :circle_src="circle_src" />
+    </div>
     <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
   </div>
 </template>
@@ -10,6 +12,16 @@ import CatchImage from '~/components/Atoms/CatchImage'
 export default {
   components: {
     CatchImage,
+  },
+  props: {
+    typo_src: {
+      type: String,
+      required: true,
+    },
+    circle_src: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
