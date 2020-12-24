@@ -5,7 +5,7 @@ export default {
   components: UserIcon,
 }
 
-export const Template = (argTypes) => ({
+const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { UserIcon },
   template: '<user-icon v-bind="$props" />',
