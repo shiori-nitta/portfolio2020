@@ -1,6 +1,8 @@
 require('dotenv').config()
 const client = require('./src/plugins/contentful').default
 
+const baseDesc = 'webデザイナーのDailyUIをまとめたポートフォリオサイト'
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -12,7 +14,42 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: baseDesc,
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'HotPepper Position App',
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://soda.netlify.app/',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: `SODA | WebDesigner's portfolio`,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: baseDesc,
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://soda.netlify.app/images/ogp/common.png',
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [
       {
