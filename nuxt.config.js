@@ -68,6 +68,15 @@ export default {
         type: 'image/png',
         href: '/images/favicon/favicon.png',
       },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
+      },
     ],
   },
 
