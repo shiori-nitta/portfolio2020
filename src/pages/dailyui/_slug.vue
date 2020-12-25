@@ -19,19 +19,19 @@
           ></div>
         </section>
         <Pager>
-          <page-previous
-            v-if="prevPost"
-            :src="prevPost.fields.headerImage.fields.file.url"
-            :alt="prevPost.fields.title"
-            :title="prevPost.fields.title"
-            :to="prevPost.fields.slug"
-          />
           <page-next
             v-if="nextPost"
             :src="nextPost.fields.headerImage.fields.file.url"
             :alt="nextPost.fields.title"
             :title="nextPost.fields.title"
             :to="nextPost.fields.slug"
+          />
+          <page-previous
+            v-if="prevPost"
+            :src="prevPost.fields.headerImage.fields.file.url"
+            :alt="prevPost.fields.title"
+            :title="prevPost.fields.title"
+            :to="prevPost.fields.slug"
           />
         </Pager>
         <div class="l-home-button">
@@ -62,16 +62,15 @@ export default {
       (await store.state.posts.findIndex(
         (post) => post.fields.slug === currentPost.fields.slug
       ))
-    const length = payload || (await store.state.posts.length)
-    const prev = index - 1
-    const next = index + 1
+    const prev = index + 1
+    const next = index - 1
     const prevPost = store.state.posts[prev]
     const nextPost = store.state.posts[next]
     if ((currentPost, prevPost, nextPost)) {
       return { currentPost, prevPost, nextPost }
     }
-    if ((currentPost, next === length)) {
-      // 一番古い記事も400になるので救済
+    if ((currentPost, index === 0)) {
+      // 最新記事も400になるので救済
       return { currentPost, prevPost, nextPost }
     }
     return error({ statusCode: 400 })

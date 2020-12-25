@@ -15,6 +15,6 @@ export const Default = Template.bind({})
 Default.args = {
   src: 'images/work-image.png',
   alt: '作品イメージです',
-  title: '#003 LandingPage',
+  title: '#002 Credit Card Checkout',
   to: '/',
 }

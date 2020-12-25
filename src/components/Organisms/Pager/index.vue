@@ -18,7 +18,7 @@
       width: calc((100% - 20px) / 2);
     }
   }
-  .page-next {
+  .page-previous {
     margin-left: auto;
   }
 }

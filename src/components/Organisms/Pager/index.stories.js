@@ -12,8 +12,8 @@ export const $default = (argTypes) => ({
   components: { Pager, PagePrevious, PageNext },
   template: `
   <Pager>
-    <page-previous src='images/work-image.png' alt='作品イメージです' title='#002 Credit Card Checkout' to="/prev" />
     <page-next v-bind="$props" src='images/work-image.png' alt='作品イメージです' title='#003 LandingPage' to="/next" />
+    <page-previous src='images/work-image.png' alt='作品イメージです' title='#002 Credit Card Checkout' to="/prev" />
   </Pager>
   `,
 })
