@@ -1,17 +1,17 @@
 <template>
-  <nuxt-link :to="to" class="page-next">
-    <div class="page-next__icon"><icon-arrow-right /></div>
+  <nuxt-link :to="to" class="page-previous">
+    <div class="page-previous__icon"><icon-arrow-left /></div>
     <pager-content :src="src" :alt="alt" progress="Next" :title="title" />
   </nuxt-link>
 </template>
 
 <script>
-import IconArrowRight from '~/components/Atoms/Icon/arrowRight.vue'
+import IconArrowLeft from '~/components/Atoms/Icon/arrowLeft.vue'
 import PagerContent from '~/components/Modules/PagerContent'
 
 export default {
   components: {
-    IconArrowRight,
+    IconArrowLeft,
     PagerContent,
   },
   props: {
@@ -36,10 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-next {
+.page-previous {
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
   width: 100%;
   padding: 10px 0;
   background: none;
@@ -78,6 +77,6 @@ export default {
 }
 .pager-content {
   width: calc(100% - 44px);
-  margin-right: 20px;
+  margin-left: 20px;
 }
 </style>
