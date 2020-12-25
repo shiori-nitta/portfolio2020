@@ -124,36 +124,57 @@ export default {
   margin: 20px 0;
   &__category {
     display: block;
+    margin: 10px 0;
     @include font-en-bold;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
   &__title {
     display: block;
     margin-top: 4px;
     @include font-en-bold;
-    font-size: 2rem;
+    font-size: 2.6rem;
   }
 }
 .text-area {
   margin: 20px 0;
   line-height: 2;
   h1 {
-    font-size: 1.8rem;
+    padding: 10px 0;
+    font-size: 2.2rem;
+    line-height: 1.6;
+    border-bottom: 2px dotted lighten($text-color, 60%);
+    margin: 40px 0 20px;
+    @include font-bold;
+    @include media(md, max) {
+      font-size: 2rem;
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 1.6;
     padding-left: 16px;
     margin-top: 40px;
     border-left: 2px solid $text-color;
+    margin: 40px 0 20px;
+    @include font-bold;
   }
-  h2 {
+  h3 {
     font-size: 1.6rem;
+    line-height: 1.6;
     display: flex;
+    @include font-bold;
     &::before {
       display: block;
       content: '●';
       margin-right: 8px;
     }
   }
-  p {
+  p,
+  img {
     margin: 20px 0;
+  }
+  img {
+    width: 100%;
   }
   a {
     padding: 0;
@@ -191,6 +212,41 @@ export default {
     padding: 10px 30px;
     background: lighten($text-color, 75%);
     border-radius: 4px;
+  }
+  code,
+  em {
+    @include font-bold;
+  }
+  table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    border: 1px solid $border-color;
+    background: $white-color;
+  }
+  th,
+  td {
+    padding: 8px 16px;
+    border-bottom: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+  th {
+    background: lighten($text-color, 75%);
+    color: $text-color;
+    @include font-bold;
+    line-height: 1.6;
+  }
+  .video {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }
 .pager {
