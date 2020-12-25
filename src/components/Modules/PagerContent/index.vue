@@ -45,7 +45,7 @@ export default {
     align-items: flex-start;
   }
   &__thumb {
-    width: 20%;
+    width: 144px;
     @include media(md, max) {
       width: 100%;
     }
@@ -54,6 +54,7 @@ export default {
     }
   }
   &__inner {
+    width: calc(100% - 164px);
     margin: 0 0 0 20px;
     @include media(md, max) {
       width: 100%;
@@ -71,7 +72,10 @@ export default {
     font-size: 1.4rem;
     color: $text-color;
     @include font-en-bold;
-    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     @include media(md, max) {
       margin-top: 8px;
     }
