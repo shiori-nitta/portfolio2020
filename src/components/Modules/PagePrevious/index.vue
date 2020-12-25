@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link :to="to" class="page-next">
-    <div class="page-next__icon"><icon-arrow-right /></div>
+  <nuxt-link :to="to" class="page-previous">
+    <div class="page-previous__icon"><icon-arrow-right /></div>
     <pager-content :src="src" :alt="alt" progress="Previous" :title="title" />
   </nuxt-link>
 </template>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-next {
+.page-previous {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
