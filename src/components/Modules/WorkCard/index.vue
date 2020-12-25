@@ -65,6 +65,9 @@ export default {
     font-size: 1.6rem;
     color: $text-color;
     @include font-en-bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 </style>
