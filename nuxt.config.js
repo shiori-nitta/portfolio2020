@@ -78,6 +78,12 @@ export default {
           'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
       },
     ],
+    script: [
+      {
+        src: 'https://twemoji.maxcdn.com/v/latest/twemoji.min.js',
+        crossorigin: 'anonymous',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
