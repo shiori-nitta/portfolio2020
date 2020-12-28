@@ -153,6 +153,6 @@ export default {
     middleware: ['getContentful'],
   },
   googleAnalytics: {
-    id: process.env.GTM_ID,
+    id: process.env.GA_ID,
   },
 }
