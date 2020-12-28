@@ -6,28 +6,33 @@
         <section class="l-section">
           <h2 class="user-name">ソーダー</h2>
           <p class="text">
-            都内で働くWebデザイナー。現在リモートワーク中。このサイトはDaily
-            UIで制作したものをアップしていきます。
+            ペンギンの姿をしたwebデザイナーのポートフォリオサイトです。<br />
+            ここではDaily UIで制作したものを投稿していきます。<br />
+            <text-link @onClick="toDaily">DailyUI公式</text-link>
           </p>
-          <p class="text">
-            使用するデザインツール<br />
-            Figma / Illastrator / Photoshop / Xd /
-          </p>
-          <p class="text">
-            広島県出身。<br />
-            ネコととカリカリ梅とカレーが好き。たまに読書と映画の感想を書いたりしてます。
-          </p>
-          <div class="text">
-            <text-link @onClick="toTwitter">Twitter</text-link>
-            <dl>
-              <dt>読書：<text-link @onClick="toBook">ブクログ</text-link></dt>
-              <dt>映画：<text-link @onClick="toMovie">Filmarks</text-link></dt>
-            </dl>
+          <section class="section">
+            <h3 class="sub-title">プロフィール</h3>
+            <p class="text">
+              広島県出身。都内のweb制作会社に勤めてます。<br />
+              最近はデザイン以外にNuxt.jsを勉強中。このサイトもNuxt.jsで作ってます。<br />
+              たまに読書と映画の感想を書いたりしてます。
+            </p>
+            <div class="text">
+              <text-link @onClick="toTwitter">Twitter</text-link>
+              <dl class="profile-list">
+                <dt>読書：<text-link @onClick="toBook">ブクログ</text-link></dt>
+                <dt>
+                  映画：<text-link @onClick="toMovie">Filmarks</text-link>
+                </dt>
+              </dl>
+            </div>
+          </section>
+          <div class="l-home-button">
+            <base-button size="medium" @onClick="toTop"
+              >ホームに戻る</base-button
+            >
           </div>
         </section>
-        <div class="l-home-button">
-          <base-button size="medium" @onClick="toTop">ホームに戻る</base-button>
-        </div>
       </div>
     </div>
   </div>
@@ -45,6 +50,10 @@ export default {
     TextLink,
   },
   methods: {
+    toDaily() {
+      const url = 'http://www.dailyui.co/'
+      window.location.href = url
+    },
     toTwitter() {
       const url = 'https://twitter.com/T0SH1KO'
       window.location.href = url
@@ -88,6 +97,9 @@ export default {
 .l-section {
   width: 100%;
 }
+.section {
+  margin: 64px 0;
+}
 .user-icon {
   margin-top: -160px;
   @include media(md, max) {
@@ -103,8 +115,14 @@ export default {
   }
 }
 .text {
-  margin: 20px 0;
+  margin: 12px 0;
   line-height: 2;
+}
+.sub-title {
+  font-size: 1.6rem;
+}
+.profile-list {
+  margin: 12px 0;
 }
 .l-home-button {
   width: 100%;

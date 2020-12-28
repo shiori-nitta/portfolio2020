@@ -1,7 +1,7 @@
 <template>
   <div class="catch">
     <div class="catch__title">
-      <catch-image :typo_src="typo_src" :circle_src="circle_src" />
+      <catch-image :typo-src="typoSrc" :circle-src="circleSrc" />
     </div>
     <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
   </div>
@@ -14,11 +14,11 @@ export default {
     CatchImage,
   },
   props: {
-    typo_src: {
+    typoSrc: {
       type: String,
       required: true,
     },
-    circle_src: {
+    circleSrc: {
       type: String,
       required: true,
     },

@@ -13,6 +13,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-  typo_src: 'images/logo.svg',
-  circle_src: 'images/logo-circle.svg',
+  typoSrc: 'images/logo.svg',
+  circleSrc: 'images/logo-circle.svg',
 }
