@@ -75,11 +75,6 @@ export default {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
       },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
-      },
     ],
   },
 
@@ -110,7 +105,7 @@ export default {
   // WebFont
   webfontloader: {
     google: {
-      families: ['Noto+Sans+JP:wght@400;700'],
+      families: ['Noto+Sans+JP:400,700'],
     },
   },
 
