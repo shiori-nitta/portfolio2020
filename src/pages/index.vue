@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <Catch
-      :typo_src="require('@/assets/images/logo.svg')"
-      :circle_src="require('@/assets/images/logo-circle.svg')"
+      :typo-src="require('@/assets/images/logo.svg')"
+      :circle-src="require('@/assets/images/logo-circle.svg')"
     />
     <div class="l-card">
       <card-list>

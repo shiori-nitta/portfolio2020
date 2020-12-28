@@ -1,18 +1,18 @@
 <template>
   <div class="catch-image">
-    <img :src="typo_src" alt="soda" class="catch-image__typo" />
-    <img :src="circle_src" alt="cherry" class="catch-image__circle" />
+    <img :src="typoSrc" alt="soda" class="catch-image__typo" />
+    <img :src="circleSrc" alt="cherry" class="catch-image__circle" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    typo_src: {
+    typoSrc: {
       type: String,
       required: true,
     },
-    circle_src: {
+    circleSrc: {
       type: String,
       required: true,
     },
