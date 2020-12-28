@@ -27,12 +27,10 @@
               </dl>
             </div>
           </section>
-          <div class="l-home-button">
-            <base-button size="medium" @onClick="toTop"
-              >ホームに戻る</base-button
-            >
-          </div>
         </section>
+        <div class="l-home-button">
+          <base-button size="medium" @onClick="toTop">トップに戻る</base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -126,7 +124,7 @@ export default {
 }
 .l-home-button {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
