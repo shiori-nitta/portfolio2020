@@ -27,12 +27,10 @@
               </dl>
             </div>
           </section>
-          <div class="l-home-button">
-            <base-button size="medium" @onClick="toTop"
-              >ホームに戻る</base-button
-            >
-          </div>
         </section>
+        <div class="l-top-button">
+          <base-button size="medium" @onClick="toTop">トップに戻る</base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -124,9 +122,9 @@ export default {
 .profile-list {
   margin: 12px 0;
 }
-.l-home-button {
+.l-top-button {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
