@@ -15,12 +15,10 @@
               currentPost.fields.title
             }}</span>
           </h2>
-          <!-- eslint-disable vue/no-v-html -->
           <div
             class="text-area"
-            v-html="$md.render($sanitize(currentPost.fields.body))"
+            v-html="$md.render(currentPost.fields.body)"
           ></div>
-          <!-- eslint-enable -->
         </section>
         <Pager>
           <page-next
@@ -210,17 +208,10 @@ export default {
   ul {
     margin: 20px 0;
     padding-left: 24px;
-    padding: 10px 30px;
-    background: lighten($text-color, 75%);
-    border-radius: 4px;
-    list-style-type: none;
-    li {
-      margin: 10px 0;
-    }
   }
   blockquote {
     padding: 10px 30px;
-    border: 1px solid lighten($text-color, 60%);
+    background: lighten($text-color, 75%);
     border-radius: 4px;
   }
   code,
