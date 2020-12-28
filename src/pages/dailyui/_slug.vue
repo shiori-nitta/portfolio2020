@@ -77,9 +77,6 @@ export default {
     }
     return error({ statusCode: 400 })
   },
-  mounted() {
-    window.twemoji.parse(document.body)
-  },
   methods: {
     toTop() {
       return this.$router.push(`/`)
@@ -251,12 +248,6 @@ export default {
       top: 0;
       right: 0;
     }
-  }
-  .emoji {
-    display: inline-block;
-    width: 20px;
-    margin: 0 4px;
-    vertical-align: middle;
   }
 }
 .pager {
