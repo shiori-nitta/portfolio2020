@@ -31,7 +31,7 @@ export default {
   width: 100%;
   padding: 80px 40px 160px;
   @include media(md, max) {
-    padding: 120px 24px;
+    padding: 120px 24px 152px;
   }
   &__title {
     width: 100%;
