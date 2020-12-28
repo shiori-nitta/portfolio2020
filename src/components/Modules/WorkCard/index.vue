@@ -4,7 +4,7 @@
       <img :src="src" :alt="alt" />
     </figure>
     <div class="work-card__body">
-      <p class="work-card__category">Daily UI</p>
+      <p class="work-card__category">{{ category }}</p>
       <p class="work-card__title">{{ title }}</p>
     </div>
   </nuxt-link>
@@ -22,6 +22,10 @@ export default {
       required: true,
     },
     alt: {
+      type: String,
+      required: true,
+    },
+    category: {
       type: String,
       required: true,
     },
@@ -61,7 +65,7 @@ export default {
     @include font-en-bold;
   }
   &__title {
-    margin: 12px 0 0;
+    margin: 8px 0 0;
     font-size: 1.6rem;
     color: $text-color;
     @include font-en-bold;

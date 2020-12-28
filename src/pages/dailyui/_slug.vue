@@ -8,7 +8,9 @@
         />
         <section class="l-section l-works">
           <h2 class="works-name">
-            <span class="works-name__category">DailyUI</span>
+            <span class="works-name__category">{{
+              currentPost.fields.category
+            }}</span>
             <span class="works-name__title">{{
               currentPost.fields.title
             }}</span>
