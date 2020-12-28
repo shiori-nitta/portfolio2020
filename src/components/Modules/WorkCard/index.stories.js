@@ -19,5 +19,6 @@ Default.args = {
   to: '/',
   src: 'images/work-image.png',
   alt: '作品イメージです',
+  category: 'Daily UI',
   title: '#001 Profile',
 }
