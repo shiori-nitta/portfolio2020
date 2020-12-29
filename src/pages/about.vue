@@ -4,18 +4,21 @@
       <div class="l-content flex-column">
         <user-icon :src="require('@/assets/images/user-icon.png')" />
         <section class="l-section">
-          <h2 class="user-name">ソーダー</h2>
+          <h2 class="title">このサイトについて</h2>
           <p class="text">
-            ペンギンの姿をしたwebデザイナーのポートフォリオサイトです。<br />
-            ここではDaily UIで制作したものを投稿していきます。<br />
+            とあるwebデザイナーのポートフォリオサイトです。<br />
+            ここではDailyUIで制作したものを投稿していきます。更新はゆるめです。<br />
+          </p>
+          <p class="text description">
+            「DailyUI」とは、サイトにメールアドレスを登録して、土日を除く100日間メールでUIデザインのお題を送ってくれるサービスです。<br />
             <text-link @onClick="toDaily">DailyUI公式</text-link>
           </p>
           <section class="section">
-            <h3 class="sub-title">プロフィール</h3>
+            <h3 class="sub-title">管理人：ソーダー</h3>
             <p class="text">
-              広島県出身。都内のweb制作会社に勤めてます。<br />
-              最近はデザイン以外にNuxt.jsを勉強中。このサイトもNuxt.jsで作ってます。<br />
-              たまに読書と映画の感想を書いたりしてます。
+              広島県出身。都内のweb制作会社に勤めており、現在はリモートワークでお仕事してます。<br />
+              最近はデザインの他にフロントエンドも少しずつ勉強中。<br />
+              趣味の読書と映画鑑賞はたまに感想を書いてます。
             </p>
             <div class="text">
               <text-link @onClick="toTwitter">Twitter</text-link>
@@ -96,7 +99,7 @@ export default {
   width: 100%;
 }
 .section {
-  margin: 64px 0;
+  margin: 40px 0;
 }
 .user-icon {
   margin-top: -160px;
@@ -104,9 +107,9 @@ export default {
     margin-top: -120px;
   }
 }
-.user-name {
+.title {
   margin: 20px 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   @include font-bold;
   @include media(md, max) {
     text-align: center;
@@ -115,6 +118,17 @@ export default {
 .text {
   margin: 12px 0;
   line-height: 2;
+}
+.description {
+  margin: 20px 0;
+  padding-left: 24px;
+  padding: 20px 30px;
+  background: lighten($text-color, 75%);
+  border-radius: 4px;
+  list-style-type: none;
+  @include media(md, max) {
+    padding: 20px;
+  }
 }
 .sub-title {
   font-size: 1.6rem;

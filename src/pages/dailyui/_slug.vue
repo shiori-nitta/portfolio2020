@@ -212,6 +212,9 @@ export default {
     background: lighten($text-color, 75%);
     border-radius: 4px;
     list-style-type: none;
+    @include media(md, max) {
+      padding: 10px 20px;
+    }
     li {
       margin: 10px 0;
     }
