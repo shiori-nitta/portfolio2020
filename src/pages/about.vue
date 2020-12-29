@@ -122,10 +122,13 @@ export default {
 .description {
   margin: 20px 0;
   padding-left: 24px;
-  padding: 20px;
+  padding: 20px 30px;
   background: lighten($text-color, 75%);
   border-radius: 4px;
   list-style-type: none;
+  @include media(md, max) {
+    padding: 20px;
+  }
 }
 .sub-title {
   font-size: 1.6rem;
