@@ -43,12 +43,12 @@ export default {
 }
 .fadein-enter-active,
 .fadein-leave-active {
-  transition: 0.4s 0.9s ease-in-out;
+  transition: 0.4s 1s ease-in-out;
 }
 
 .fadein-enter,
 .fadein-leave-to {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 </style>
