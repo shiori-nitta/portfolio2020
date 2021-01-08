@@ -5,14 +5,8 @@ export default {
   components: CatchImage,
 }
 
-const Template = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { CatchImage },
-  template: '<catch-image v-bind="$props" />',
+  template: '<catch-image />',
 })
-
-export const Default = Template.bind({})
-Default.args = {
-  typoSrc: 'images/logo.svg',
-  circleSrc: 'images/logo-circle.svg',
-}
