@@ -3,7 +3,7 @@
 .animation04 {
   opacity: 0;
   transform-origin: center center;
-  animation: scale 0.4s 0.8s ease forwards;
+  animation: scale 0.4s 1s forwards;
   margin: auto;
 }
 @keyframes scale {
