@@ -147,7 +147,7 @@
 
   .circle-enter-active,
   .circle-leave-active {
-    transition: all 0.4s 0.8s ease;
+    transition: all 0.2s 0.8s ease;
     transform: scale(1.1);
   }
   .circle-enter,
