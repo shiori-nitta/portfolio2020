@@ -49,8 +49,20 @@ export default {
     color: $text-color;
     @include font-en-bold;
     letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translate(0px, 10px);
+    animation: fadein 0.4s 0.7s forwards;
     @include media(md, max) {
       font-size: 1.4rem;
+    }
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(0px, 0px);
     }
   }
 }

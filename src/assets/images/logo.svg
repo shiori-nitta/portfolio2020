@@ -2,15 +2,15 @@
   <style>
   .animation01 {
     opacity: 0;
-    animation: animation 0.2s 0.2s forwards;
+    animation: animation 0.2s 0s forwards;
   }
   .animation02 {
     opacity: 0;
-    animation: animation 0.2s 0.4s forwards;
+    animation: animation 0.2s 0.2s forwards;
   }
   .animation03 {
     opacity: 0;
-    animation: animation 0.2s 0.6s forwards;
+    animation: animation 0.2s 0.4s forwards;
   }
   @keyframes animation {
     0% {
