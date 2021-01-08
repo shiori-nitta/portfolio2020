@@ -26,6 +26,7 @@ export const actions = {
       .then((res) => {
         commit('setPosts', res.items)
       })
+      // eslint-disable-next-line
       .catch(console.error)
   },
 }

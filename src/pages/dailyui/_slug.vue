@@ -15,10 +15,12 @@
               currentPost.fields.title
             }}</span>
           </h2>
+          <!-- eslint-disable vue/no-v-html -->
           <div
             class="text-area"
             v-html="$md.render(currentPost.fields.body)"
           ></div>
+          <!-- eslint-enable -->
         </section>
         <Pager>
           <page-next

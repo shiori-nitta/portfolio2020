@@ -58,9 +58,11 @@ export default {
   },
   methods: {
     onClickPrev() {
+      // eslint-disable-next-line
       return console.info('前のページに移動')
     },
     onClickNext() {
+      // eslint-disable-next-line
       return console.info('次のページに移動')
     },
     toTop() {
