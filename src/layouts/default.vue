@@ -26,6 +26,7 @@ export default {
     q.id = 'bubbleparticle'
     document.body.appendChild(q)
     q = document.getElementById('bubbleparticle')
+    document.body.style.overflowX = 'hidden'
     const h = window.innerHeight
     const u = document.documentElement.scrollTop || document.body.scrollTop
     const z = -9999
@@ -58,12 +59,12 @@ export default {
       m.setAttribute('class', 'bubble')
       q.appendChild(m)
       y[i] = Math.random() * 25 + 0.1
-      s[i] = Math.random() * 5 + 12
+      s[i] = Math.random() * 5 + 5
       g[i] = document.getElementById('awa' + i)
       c[i] = 0
     }
     setInterval(function () {
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 40; i++) {
         if (u < t[i]) {
           if (y[i] >= c[i]) {
             l[i] = l[i] + 0.5 + Math.random() * 0.5
