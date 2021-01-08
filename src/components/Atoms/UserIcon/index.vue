@@ -20,10 +20,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 240px;
-  height: 240px;
+  width: 160px;
+  height: 160px;
   border-radius: 100%;
-  background: $bg-color;
+  background: #fff;
   overflow: hidden;
   @include media(md, max) {
     width: 80px;

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="l-wrap">
-      <div class="l-content flex-column">
+    <div class="l-works-wrap">
+      <div class="l-works-content flex-column">
         <work-image
           :src="currentPost.fields.headerImage.fields.file.url"
           :alt="currentPost.fields.title"
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss">
-.l-wrap {
+.l-works-wrap {
   width: 100%;
   margin-top: 80px;
   background: $white-color;
@@ -96,7 +96,7 @@ export default {
     margin-top: 40px;
   }
 }
-.l-content {
+.l-works-content {
   width: 100%;
   max-width: 848px;
   margin: auto;
