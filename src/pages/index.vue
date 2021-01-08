@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    <Catch
-      :typo-src="require('@/assets/images/logo.svg')"
-      :circle-src="require('@/assets/images/logo-circle.svg')"
-    />
+    <Catch />
     <div class="l-card">
       <transition appear name="fadein">
         <card-list>

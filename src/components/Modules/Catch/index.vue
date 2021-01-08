@@ -1,8 +1,6 @@
 <template>
   <div class="catch">
-    <div class="catch__title">
-      <catch-image :typo-src="typoSrc" :circle-src="circleSrc" />
-    </div>
+    <div class="catch__title"><catch-image /></div>
     <transition appear name="fadein">
       <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
     </transition>
@@ -14,16 +12,6 @@ import CatchImage from '~/components/Atoms/CatchImage'
 export default {
   components: {
     CatchImage,
-  },
-  props: {
-    typoSrc: {
-      type: String,
-      required: true,
-    },
-    circleSrc: {
-      type: String,
-      required: true,
-    },
   },
 }
 </script>
@@ -57,7 +45,7 @@ export default {
   }
   .fadein-enter-active,
   .fadein-leave-active {
-    transition: 0.4s 0.7s ease-in-out;
+    transition: 0.4s 0.6s ease-in-out;
   }
 
   .fadein-enter,
