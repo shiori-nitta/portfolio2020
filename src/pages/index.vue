@@ -41,9 +41,9 @@ export default {
 <style lang="scss">
 .l-card {
   padding: 0 24px;
-  opacity: 0;
-  transform: translate(0px, 20px);
-  animation: fadein 0.4s 0.9s forwards;
+  // opacity: 0;
+  // transform: translate(0px, 20px);
+  // animation: fadein 0.4s 0.9s forwards;
 }
 @keyframes fadein {
   0% {
