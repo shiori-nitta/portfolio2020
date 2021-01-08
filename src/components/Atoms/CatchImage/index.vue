@@ -31,6 +31,11 @@ export default {
     position: absolute;
     top: 10px;
     left: 216px;
+    @include media(md, max) {
+      width: 15%;
+      top: 6%;
+      left: 65%;
+    }
   }
 }
 </style>
