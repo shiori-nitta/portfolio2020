@@ -3,7 +3,9 @@
     <div class="catch__title">
       <catch-image :typo-src="typoSrc" :circle-src="circleSrc" />
     </div>
-    <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
+    <transition appear>
+      <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
+    </transition>
   </div>
 </template>
 
@@ -49,9 +51,9 @@ export default {
     color: $text-color;
     @include font-en-bold;
     letter-spacing: 0.1em;
-    opacity: 0;
-    transform: translate(0px, 10px);
-    animation: fadein 0.4s 0.7s forwards;
+    // opacity: 1;
+    // transform: translate(0px, 10px);
+    // animation: fadein 0.4s 0.7s forwards;
     @include media(md, max) {
       font-size: 1.4rem;
     }
@@ -64,6 +66,16 @@ export default {
       opacity: 100%;
       transform: translate(0px, 0px);
     }
+  }
+  .v-enter-active,
+  .v-leave-active {
+    transition: 0.4s 0.7s linear;
+  }
+
+  .v-enter,
+  .v-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
   }
 }
 </style>
