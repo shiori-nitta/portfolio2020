@@ -3,7 +3,7 @@
     <div class="catch__title">
       <catch-image :typo-src="typoSrc" :circle-src="circleSrc" />
     </div>
-    <transition appear>
+    <transition appear name="fadein">
       <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
     </transition>
   </div>
@@ -51,29 +51,17 @@ export default {
     color: $text-color;
     @include font-en-bold;
     letter-spacing: 0.1em;
-    // opacity: 1;
-    // transform: translate(0px, 10px);
-    // animation: fadein 0.4s 0.7s forwards;
     @include media(md, max) {
       font-size: 1.4rem;
     }
   }
-  @keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 100%;
-      transform: translate(0px, 0px);
-    }
-  }
-  .v-enter-active,
-  .v-leave-active {
-    transition: 0.4s 0.7s linear;
+  .fadein-enter-active,
+  .fadein-leave-active {
+    transition: 0.4s 0.7s ease-in-out;
   }
 
-  .v-enter,
-  .v-leave-to {
+  .fadein-enter,
+  .fadein-leave-to {
     opacity: 0;
     transform: translateY(10px);
   }
