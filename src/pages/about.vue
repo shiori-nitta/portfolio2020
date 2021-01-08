@@ -103,7 +103,10 @@ export default {
   width: 100%;
 }
 .section {
-  margin: 40px 0;
+  margin: 80px 0;
+  @include media(md, max) {
+    margin: 40px 0;
+  }
 }
 .user-icon {
   border: 2px solid lighten($text-color, 75%);
