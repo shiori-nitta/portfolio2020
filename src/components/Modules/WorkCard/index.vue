@@ -1,11 +1,7 @@
 <template>
   <nuxt-link :to="to" class="work-card">
     <figure class="work-card__thumb">
-      <client-only>
-        <lazy-component>
-          <img :src="src" :alt="alt" />
-        </lazy-component>
-      </client-only>
+      <img :src="src" :alt="alt" loading="lazy" />
     </figure>
     <div class="work-card__body">
       <p class="work-card__category">{{ category }}</p>

@@ -1,9 +1,5 @@
 <template>
-  <client-only>
-    <lazy-component>
-      <img class="work-image" :src="src" :alt="alt" />
-    </lazy-component>
-  </client-only>
+  <img class="work-image" :src="src" :alt="alt" loading="lazy" />
 </template>
 
 <script>
