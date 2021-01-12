@@ -95,19 +95,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    '@nuxtjs/style-resources',
-    'nuxt-webfontloader',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit',
-  ],
-
-  // WebFont
-  webfontloader: {
-    google: {
-      families: ['Noto+Sans+JP:400,700'],
-    },
-  },
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/dotenv', '@nuxtjs/markdownit'],
 
   styleResources: {
     scss: [

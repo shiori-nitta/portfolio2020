@@ -2,7 +2,7 @@
 export default function ({ app }, inject) {
   const adobeFonts = (d) => {
     var config = {
-        kitId: 'mxk7gts',
+        kitId: 'iyy1yik',
         scriptTimeout: 3000,
         async: true,
       },
