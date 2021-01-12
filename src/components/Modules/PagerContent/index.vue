@@ -1,7 +1,11 @@
 <template>
   <div class="pager-content">
     <figure class="pager-content__thumb">
-      <img :src="src" :alt="alt" />
+      <client-only>
+        <lazy-component>
+          <img :src="src" :alt="alt" />
+        </lazy-component>
+      </client-only>
     </figure>
     <div class="pager-content__inner">
       <p class="pager-content__progress">{{ progress }}</p>
