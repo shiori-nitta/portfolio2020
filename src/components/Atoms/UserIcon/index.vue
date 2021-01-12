@@ -1,6 +1,10 @@
 <template>
   <div class="user-icon">
-    <img :src="src" alt="管理者アイコン" class="user-icon__image" />
+    <client-only>
+      <lazy-component>
+        <img :src="src" alt="管理者アイコン" class="user-icon__image" />
+      </lazy-component>
+    </client-only>
   </div>
 </template>
 
