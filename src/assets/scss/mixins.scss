@@ -43,23 +43,23 @@
 
 /// webフォント設定
 @mixin font-normal {
-  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", sans-serif;
+  font-family: "source-han-sans-japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", sans-serif;
   font-weight: 400;
 }
 
 @mixin font-bold {
-  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", sans-serif;
+  font-family: "source-han-sans-japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", sans-serif;
   font-weight: 700;
 }
 
 @mixin font-en-normal {
-  font-family: museo-sans, Arial, Helvetica, Verdana, "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  font-family: museo-sans, Arial, Helvetica, Verdana, "source-han-sans-japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 @mixin font-en-bold {
-  font-family: museo-sans, Arial, Helvetica, Verdana, "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  font-family: museo-sans, Arial, Helvetica, Verdana, "source-han-sans-japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
