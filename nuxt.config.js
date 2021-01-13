@@ -95,7 +95,19 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/dotenv', '@nuxtjs/markdownit'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
+    'nuxt-webfontloader',
+  ],
+
+  // WebFont
+  webfontloader: {
+    google: {
+      families: ['Roboto'],
+    },
+  },
 
   styleResources: {
     scss: [
