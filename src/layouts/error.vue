@@ -39,6 +39,11 @@ export default {
       default: null,
     },
   },
+  methods: {
+    toTop() {
+      return this.$router.push(`/`)
+    },
+  },
   layout: 'error', // エラーページ用のカスタムレイアウトを指定できます
 }
 </script>
