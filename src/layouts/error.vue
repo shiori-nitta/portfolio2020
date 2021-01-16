@@ -33,6 +33,12 @@
 
 <script>
 export default {
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
   layout: 'error', // エラーページ用のカスタムレイアウトを指定できます
 }
 </script>
