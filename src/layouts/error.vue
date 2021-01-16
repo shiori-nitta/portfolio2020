@@ -36,7 +36,7 @@ export default {
   props: {
     error: {
       type: Object,
-      required: true,
+      default: null,
     },
   },
   layout: 'error', // エラーページ用のカスタムレイアウトを指定できます
