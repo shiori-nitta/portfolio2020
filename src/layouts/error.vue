@@ -35,7 +35,7 @@
 export default {
   props: {
     error: {
-      type: String,
+      type: Object,
       required: true,
     },
   },
