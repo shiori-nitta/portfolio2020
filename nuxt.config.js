@@ -127,6 +127,7 @@ export default {
   },
   // 動的ルーティング追加
   generate: {
+    fallback: true,
     routes() {
       return Promise.all([
         client.getEntries({
