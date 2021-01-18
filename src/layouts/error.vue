@@ -63,7 +63,7 @@ export default {
   width: 180px;
   margin: 40px auto;
   @include media(md, max) {
-    width: 120px;
+    width: 140px;
   }
 }
 </style>
