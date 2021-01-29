@@ -53,8 +53,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
@@ -68,8 +66,10 @@ export default {
   async asyncData({ payload, store, params, error }) {
     const currentPost =
       payload ||
-      (await store.state.posts.find((post) => post.fields.slug === params.slug))
-    const category = await store.state.categories.find(
+      (await store.getters.posts.find(
+        (post) => post.fields.slug === params.slug
+      ))
+    const category = await store.getters.categories.find(
       (cat) => cat.fields.slug === currentPost.fields.category.fields.slug
     )
     const relatedPosts = await store.getters.relatedPosts(category)
@@ -86,9 +86,6 @@ export default {
       return { currentPost, category, relatedPosts, prevPost, nextPost }
     }
     return error({ statusCode: 400 })
-  },
-  computed: {
-    ...mapGetters(['posts']),
   },
   methods: {
     toTop() {
