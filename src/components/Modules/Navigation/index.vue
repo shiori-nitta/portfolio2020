@@ -3,6 +3,10 @@
     <ul class="navigation-list">
       <li class="navigation-list__item">
         <nuxt-link class="navigation-list__link" to="/about">About</nuxt-link>
+        <nuxt-link class="navigation-list__link" to="/dailyui"
+          >DailyUI</nuxt-link
+        >
+        <nuxt-link class="navigation-list__link" to="/tips">Tips</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -26,6 +30,7 @@
   }
   &__link {
     padding: 10px 0;
+    margin: 0 0 0 24px;
     color: $text-color;
     text-decoration: none;
     cursor: pointer;
