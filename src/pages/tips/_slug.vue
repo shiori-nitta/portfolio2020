@@ -1,51 +1,43 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="l-works-wrap">
-        <div class="l-works-content flex-column">
-          <work-image
-            :src="currentPost.fields.headerImage.fields.file.url"
-            :alt="currentPost.fields.title"
+  <div class="container">
+    <div class="l-works-wrap">
+      <div class="l-works-content flex-column">
+        <work-image
+          :src="currentPost.fields.headerImage.fields.file.url"
+          :alt="currentPost.fields.title"
+        />
+        <section class="l-section l-works">
+          <h2 class="works-name">
+            <span class="works-name__category">{{ category.fields.name }}</span>
+            <span class="works-name__title">{{
+              currentPost.fields.title
+            }}</span>
+          </h2>
+          <!-- eslint-disable vue/no-v-html -->
+          <div
+            class="text-area"
+            v-html="$md.render(currentPost.fields.body)"
+          ></div>
+          <!-- eslint-enable -->
+        </section>
+        <Pager>
+          <page-next
+            v-if="nextPost"
+            :src="nextPost.fields.headerImage.fields.file.url"
+            :alt="nextPost.fields.title"
+            :title="nextPost.fields.title"
+            :to="nextPost.fields.slug"
           />
-          <section class="l-section l-works">
-            <h2 class="works-name">
-              <span class="works-name__category">{{
-                category.fields.name
-              }}</span>
-              <span class="works-name__title">{{
-                currentPost.fields.title
-              }}</span>
-            </h2>
-            <!-- eslint-disable vue/no-v-html -->
-            <div
-              class="text-area"
-              v-html="
-                $md.render(currentPost.fields.body.content[0].content[0].value)
-              "
-            ></div>
-            <!-- eslint-enable -->
-          </section>
-          <Pager>
-            <page-next
-              v-if="nextPost"
-              :src="nextPost.fields.headerImage.fields.file.url"
-              :alt="nextPost.fields.title"
-              :title="nextPost.fields.title"
-              :to="nextPost.fields.slug"
-            />
-            <page-previous
-              v-if="prevPost"
-              :src="prevPost.fields.headerImage.fields.file.url"
-              :alt="prevPost.fields.title"
-              :title="prevPost.fields.title"
-              :to="prevPost.fields.slug"
-            />
-          </Pager>
-          <div class="l-top-button">
-            <base-button size="medium" @onClick="toTop"
-              >トップに戻る</base-button
-            >
-          </div>
+          <page-previous
+            v-if="prevPost"
+            :src="prevPost.fields.headerImage.fields.file.url"
+            :alt="prevPost.fields.title"
+            :title="prevPost.fields.title"
+            :to="prevPost.fields.slug"
+          />
+        </Pager>
+        <div class="l-top-button">
+          <base-button size="medium" @onClick="toTop">トップに戻る</base-button>
         </div>
       </div>
     </div>
@@ -106,7 +98,7 @@ export default {
 }
 .l-works-content {
   width: 100%;
-  max-width: 848px;
+  max-width: 672px;
   margin: auto;
   padding: 80px 24px;
   position: relative;
@@ -124,7 +116,7 @@ export default {
 }
 .work-image {
   width: 100%;
-  max-width: 848px;
+  max-width: 672px;
   margin: auto;
   margin-top: -160px;
   @include media(md, max) {
@@ -132,7 +124,6 @@ export default {
   }
 }
 .works-name {
-  margin: 20px 0;
   &__category {
     display: block;
     margin: 10px 0;
@@ -151,13 +142,14 @@ export default {
   line-height: 2;
   h1 {
     padding: 10px 0;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1.6;
     border-bottom: 2px dotted lighten($text-color, 60%);
     margin: 40px 0 20px;
     @include font-bold;
     @include media(md, max) {
       font-size: 2rem;
+      margin: 32px 0 20px;
     }
   }
   h2 {
@@ -168,16 +160,19 @@ export default {
     border-left: 2px solid $text-color;
     margin: 40px 0 20px;
     @include font-bold;
+    @include media(md, max) {
+      font-size: 1.8rem;
+      margin: 32px 0 20px;
+    }
   }
   h3 {
-    font-size: 1.6rem;
+    margin: 20px 0 10px;
+    font-size: 2rem;
     line-height: 1.6;
     display: flex;
     @include font-bold;
-    &::before {
-      display: block;
-      content: '●';
-      margin-right: 8px;
+    @include media(md, max) {
+      font-size: 1.6rem;
     }
   }
   p,
@@ -234,7 +229,28 @@ export default {
     border: 1px solid lighten($text-color, 60%);
     border-radius: 4px;
   }
-  code,
+  code {
+    margin: 0 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: lighten($text-color, 72%);
+    color: $text-color;
+  }
+  pre {
+    margin: 10px 0;
+    padding: 16px 24px;
+    background: $text-color;
+    border-radius: 4px;
+    overflow: scroll;
+    @include media(md, max) {
+      padding: 12px 16px;
+    }
+    code {
+      color: $white-color;
+      font-size: 1.4rem;
+      background: transparent;
+    }
+  }
   em {
     @include font-bold;
   }
