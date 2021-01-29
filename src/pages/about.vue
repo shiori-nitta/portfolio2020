@@ -16,10 +16,9 @@
           <div class="section profile">
             <user-icon :src="require('@/assets/images/user-icon.png')" />
             <section class="profile__info">
-              <h3 class="sub-title">管理人：ソーダー</h3>
+              <h3 class="sub-title">管理人：新田詩織（ソーダー）</h3>
               <p class="text">
-                広島県出身。都内のweb制作会社に勤めており、現在はリモートワークでお仕事してます。<br />
-                最近はデザインの他にフロントエンドも少しずつ勉強中。<br />
+                広島県出身。都内のweb制作会社に勤めているwebデザイナー。現在はリモートワークでお仕事してます。<br />
                 炭酸水をこよなく愛する。
               </p>
               <div class="text">
