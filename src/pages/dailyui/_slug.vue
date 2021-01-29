@@ -8,9 +8,7 @@
         />
         <section class="l-section l-works">
           <h2 class="works-name">
-            <span class="works-name__category">{{
-              currentPost.fields.category
-            }}</span>
+            <span class="works-name__category">{{ category.fields.name }}</span>
             <span class="works-name__title">{{
               currentPost.fields.title
             }}</span>
@@ -18,7 +16,9 @@
           <!-- eslint-disable vue/no-v-html -->
           <div
             class="text-area"
-            v-html="$md.render(currentPost.fields.body)"
+            v-html="
+              $md.render(currentPost.fields.body.content[0].content[0].value)
+            "
           ></div>
           <!-- eslint-enable -->
         </section>
@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
@@ -61,23 +63,26 @@ export default {
     const currentPost =
       payload ||
       (await store.state.posts.find((post) => post.fields.slug === params.slug))
+    const category = await store.state.categories.find(
+      (cat) => cat.fields.slug === currentPost.fields.category.fields.slug
+    )
+    const relatedPosts = await store.getters.relatedPosts(category)
     const index =
       payload ||
-      (await store.state.posts.findIndex(
+      relatedPosts.findIndex(
         (post) => post.fields.slug === currentPost.fields.slug
-      ))
+      )
     const prev = index + 1
     const next = index - 1
-    const prevPost = store.state.posts[prev]
-    const nextPost = store.state.posts[next]
-    if ((currentPost, prevPost, nextPost)) {
-      return { currentPost, prevPost, nextPost }
-    }
-    if ((currentPost, index === 0)) {
-      // 最新記事も400になるので救済
-      return { currentPost, prevPost, nextPost }
+    const prevPost = relatedPosts[prev]
+    const nextPost = relatedPosts[next]
+    if (currentPost) {
+      return { currentPost, category, relatedPosts, index, prevPost, nextPost }
     }
     return error({ statusCode: 400 })
+  },
+  computed: {
+    ...mapGetters(['posts']),
   },
   methods: {
     toTop() {
