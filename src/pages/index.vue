@@ -7,10 +7,10 @@
           <work-card
             v-for="(post, i) in posts"
             :key="i"
-            :to="'dailyui/' + post.fields.slug"
+            :to="post.fields.category.fields.slug + '/' + post.fields.slug"
             :src="post.fields.headerImage.fields.file.url"
             :alt="post.fields.title"
-            :category="post.fields.category"
+            :category="post.fields.category.fields.name"
             :title="post.fields.title"
           />
         </card-list>
@@ -32,7 +32,7 @@ export default {
     CardList,
   },
   computed: {
-    ...mapGetters(['posts']),
+    ...mapGetters(['posts', 'categories']),
   },
 }
 </script>
