@@ -3,9 +3,13 @@
     <ul class="navigation-list">
       <li class="navigation-list__item">
         <nuxt-link class="navigation-list__link" to="/about">About</nuxt-link>
+      </li>
+      <li class="navigation-list__item">
         <nuxt-link class="navigation-list__link" to="/dailyui"
           >DailyUI</nuxt-link
         >
+      </li>
+      <li class="navigation-list__item">
         <nuxt-link class="navigation-list__link" to="/tips">Tips</nuxt-link>
       </li>
     </ul>
@@ -29,11 +33,11 @@
     }
     @include media(md, max) {
       font-size: 1.4rem;
+      margin-left: 4vw;
     }
   }
   &__link {
     padding: 10px 0;
-    margin: 0 0 0 4vw;
     color: $text-color;
     text-decoration: none;
     cursor: pointer;
