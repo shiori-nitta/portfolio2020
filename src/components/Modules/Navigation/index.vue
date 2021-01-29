@@ -18,6 +18,7 @@
   width: 100%;
 }
 .navigation-list {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   &__item {
@@ -32,7 +33,7 @@
   }
   &__link {
     padding: 10px 0;
-    margin: 0 0 0 24px;
+    margin: 0 0 0 4vw;
     color: $text-color;
     text-decoration: none;
     cursor: pointer;
