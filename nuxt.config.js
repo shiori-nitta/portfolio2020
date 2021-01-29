@@ -136,7 +136,10 @@ export default {
       ]).then(([posts]) => {
         return [
           ...posts.items.map((post) => {
-            return { route: `dailyui/${post.fields.slug}`, payload: post }
+            return {
+              route: `${post.fields.category.fields.slug}/${post.fields.slug}`,
+              payload: post,
+            }
           }),
         ]
       })
