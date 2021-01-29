@@ -15,9 +15,11 @@
 <style lang="scss" scoped>
 .navigation {
   padding: 10px 0;
+  width: 100%;
 }
 .navigation-list {
   display: flex;
+  justify-content: flex-end;
   &__item {
     font-size: 1.6rem;
     @include font-en-bold;
