@@ -29,11 +29,10 @@
     font-size: 1.6rem;
     @include font-en-bold;
     &:not(:first-child) {
-      margin-left: 20px;
-    }
-    @include media(md, max) {
-      font-size: 1.4rem;
-      margin-left: 4vw;
+      margin-left: 40px;
+      @include media(md, max) {
+        margin-left: 6vw;
+      }
     }
   }
   &__link {
