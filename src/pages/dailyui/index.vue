@@ -9,7 +9,7 @@
           :src="post.fields.headerImage.fields.file.url"
           :alt="post.fields.title"
           :category="post.fields.category.fields.name"
-          :title="post.fields.slug"
+          :title="post.fields.title"
         />
       </card-list>
     </div>
