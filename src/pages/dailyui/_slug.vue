@@ -134,7 +134,7 @@ export default {
     display: block;
     margin-top: 4px;
     @include font-en-bold;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
 }
 .text-area {
@@ -166,7 +166,7 @@ export default {
     }
   }
   h3 {
-    margin: 20px 0 10px;
+    margin: 20px 0;
     font-size: 2rem;
     line-height: 1.6;
     display: flex;
@@ -177,7 +177,7 @@ export default {
   }
   p,
   img {
-    margin: 20px 0;
+    margin: 28px 0;
   }
   img {
     width: 100%;
