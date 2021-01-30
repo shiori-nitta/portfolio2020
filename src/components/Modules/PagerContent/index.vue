@@ -45,7 +45,7 @@ export default {
     align-items: flex-start;
   }
   &__thumb {
-    width: 144px;
+    width: 120px;
     @include media(md, max) {
       width: 100%;
     }
