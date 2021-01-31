@@ -75,7 +75,7 @@ export default {
     const prevPost = relatedPosts[prev]
     const nextPost = relatedPosts[next]
     if (currentPost) {
-      return { currentPost, category, relatedPosts, index, prevPost, nextPost }
+      return { currentPost, category, relatedPosts, prevPost, nextPost }
     }
     return error({ statusCode: 400 })
   },
@@ -285,9 +285,6 @@ export default {
       right: 0;
     }
   }
-}
-.pager {
-  margin: 40px 0;
 }
 .l-top-button {
   width: 100%;

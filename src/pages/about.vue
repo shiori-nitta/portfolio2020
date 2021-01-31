@@ -7,6 +7,7 @@
           <p class="text">
             とあるwebデザイナーのポートフォリオサイトです。<br />
             ここではDailyUIで制作したものを投稿していきます。更新はゆるめです。<br />
+            たまにデザインや技術についても書いていこうと思います。
           </p>
           <p class="text description">
             「DailyUI」とは、サイトにメールアドレスを登録して、土日を除く100日間メールでUIデザインのお題を送ってくれるサービスです。<br />
@@ -15,22 +16,21 @@
           <div class="section profile">
             <user-icon :src="require('@/assets/images/user-icon.png')" />
             <section class="profile__info">
-              <h3 class="sub-title">管理人：ソーダー</h3>
+              <h3 class="sub-title">管理人：新田詩織（ソーダー）</h3>
               <p class="text">
-                広島県出身。都内のweb制作会社に勤めており、現在はリモートワークでお仕事してます。<br />
-                最近はデザインの他にフロントエンドも少しずつ勉強中。<br />
-                趣味の読書と映画鑑賞はたまに感想を書いてます。
+                広島県出身。都内のweb制作会社に勤めているwebデザイナー。現在はリモートワークでお仕事してます。<br />
+                炭酸水をこよなく愛する。
               </p>
               <div class="text">
                 <text-link @onClick="toTwitter">Twitter</text-link>
-                <dl class="profile-list">
+                <!-- <dl class="profile-list">
                   <dt>
                     読書：<text-link @onClick="toBook">ブクログ</text-link>
                   </dt>
                   <dt>
                     映画：<text-link @onClick="toMovie">Filmarks</text-link>
                   </dt>
-                </dl>
+                </dl> -->
               </div>
             </section>
           </div>
@@ -86,7 +86,7 @@ export default {
 }
 .l-content {
   width: 100%;
-  max-width: 848px;
+  max-width: 672px;
   margin: auto;
   padding: 40px 24px 80px;
   position: relative;
