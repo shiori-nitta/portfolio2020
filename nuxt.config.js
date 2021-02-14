@@ -128,6 +128,7 @@ export default {
   // 動的ルーティング追加
   generate: {
     fallback: true,
+    subFolders: false,
     routes() {
       return Promise.all([
         client.getEntries({
