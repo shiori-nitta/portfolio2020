@@ -5,7 +5,7 @@
       <transition appear name="fadein">
         <card-list>
           <work-card
-            v-for="(post, i) in posts"
+            v-for="(post, i) in displayPosts"
             :key="i"
             :to="post.fields.category.fields.slug + '/' + post.fields.slug"
             :src="post.fields.headerImage.fields.file.url"
@@ -15,6 +15,14 @@
           />
         </card-list>
       </transition>
+      <infinite-loading
+        ref="infiniteLoading"
+        spinner="spiral"
+        @infinite="infiniteHandler"
+      >
+        <span slot="no-more"></span>
+        <span slot="no-results"></span>
+      </infinite-loading>
     </div>
   </div>
 </template>
@@ -26,13 +34,37 @@ import WorkCard from '~/components/Modules/WorkCard'
 import CardList from '~/components/Organisms/CardList'
 
 export default {
+  name: 'InfiniteScroll',
   components: {
     Catch,
     WorkCard,
     CardList,
   },
+  data() {
+    return {
+      displayPosts: [],
+      pageIndex: 0,
+      perPage: 12,
+    }
+  },
   computed: {
     ...mapGetters(['posts', 'categories']),
+  },
+  methods: {
+    infiniteHandler($state) {
+      setTimeout(() => {
+        this.pageIndex++
+        this.displayPosts = this.posts.slice(
+          0,
+          (this.pageIndex + 1) * this.perPage
+        )
+        if (this.displayPosts.length !== this.posts.length) {
+          $state.loaded()
+        } else {
+          $state.complete()
+        }
+      }, 1000)
+    },
   },
 }
 </script>
