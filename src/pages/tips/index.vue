@@ -1,17 +1,19 @@
 <template>
   <div class="container">
     <div class="l-card">
-      <card-list>
-        <work-card
-          v-for="(post, i) in displayPosts"
-          :key="i"
-          :to="post.fields.category.fields.slug + '/' + post.fields.slug"
-          :src="post.fields.headerImage.fields.file.url"
-          :alt="post.fields.title"
-          :category="post.fields.category.fields.name"
-          :title="post.fields.title"
-        />
-      </card-list>
+      <transition appear name="fadein">
+        <card-list>
+          <work-card
+            v-for="(post, i) in displayPosts"
+            :key="i"
+            :to="post.fields.category.fields.slug + '/' + post.fields.slug"
+            :src="post.fields.headerImage.fields.file.url"
+            :alt="post.fields.title"
+            :category="post.fields.category.fields.name"
+            :title="post.fields.title"
+          />
+        </card-list>
+      </transition>
       <infinite-loading
         ref="infiniteLoading"
         spinner="spiral"
