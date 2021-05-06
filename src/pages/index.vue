@@ -52,8 +52,6 @@ export default {
   },
   methods: {
     infiniteHandler($state) {
-      console.info(this.displayPosts)
-      console.info(this.posts)
       setTimeout(() => {
         this.pageIndex++
         this.displayPosts = this.posts.slice(
