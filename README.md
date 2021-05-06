@@ -29,3 +29,15 @@ Netlify へのデプロイは[ここ](https://github.com/nittashiori/portfolio20
 作業ブランチに`git rebase master`コマンドを叩き、origin に push してマージしてください。（試してないので挙動がよく分からない。挙動確認できたら readme 更新します。）
 
 上記でうまくいかなかったら`remotes/upstream/master`に pull し、直接 master ブランチに push してください。
+
+## URL
+
+### 本番
+
+https://sodasui.net/
+
+### テスト
+
+https://portfolio-test-nitta.netlify.app/
+
+pw: portfolio
