@@ -3,7 +3,7 @@
     <div class="l-card">
       <card-list>
         <work-card
-          v-for="(post, i) in relatedPosts"
+          v-for="(post, i) in displayPosts"
           :key="i"
           :to="post.fields.category.fields.slug + '/' + post.fields.slug"
           :src="post.fields.headerImage.fields.file.url"
@@ -12,6 +12,14 @@
           :title="post.fields.title"
         />
       </card-list>
+      <infinite-loading
+        ref="infiniteLoading"
+        spinner="spiral"
+        @infinite="infiniteHandler"
+      >
+        <span slot="no-more"></span>
+        <span slot="no-results"></span>
+      </infinite-loading>
     </div>
   </div>
 </template>
@@ -22,6 +30,7 @@ import WorkCard from '~/components/Modules/WorkCard'
 import CardList from '~/components/Organisms/CardList'
 
 export default {
+  name: 'InfiniteScroll',
   components: {
     WorkCard,
     CardList,
@@ -41,8 +50,31 @@ export default {
     }
     return error({ statusCode: 400 })
   },
+  data() {
+    return {
+      displayPosts: [],
+      pageIndex: 0,
+      perPage: 12,
+    }
+  },
   computed: {
     ...mapGetters(['posts']),
+  },
+  methods: {
+    infiniteHandler($state) {
+      setTimeout(() => {
+        this.pageIndex++
+        this.displayPosts = this.relatedPosts.slice(
+          0,
+          (this.pageIndex + 1) * this.perPage
+        )
+        if (this.displayPosts.length !== this.relatedPosts.length) {
+          $state.loaded()
+        } else {
+          $state.complete()
+        }
+      }, 1000)
+    },
   },
 }
 </script>
