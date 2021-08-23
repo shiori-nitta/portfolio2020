@@ -6,38 +6,44 @@
           :src="currentPost.fields.headerImage.fields.file.url"
           :alt="currentPost.fields.title"
         />
-        <section class="l-section l-works">
-          <h2 class="works-name">
-            <span class="works-name__category">{{ category.fields.name }}</span>
-            <span class="works-name__title">{{
-              currentPost.fields.title
-            }}</span>
-          </h2>
-          <!-- eslint-disable vue/no-v-html -->
-          <div
-            class="text-area"
-            v-html="$md.render(currentPost.fields.body)"
-          ></div>
-          <!-- eslint-enable -->
-        </section>
-        <Pager>
-          <page-next
-            v-if="nextPost"
-            :src="nextPost.fields.headerImage.fields.file.url"
-            :alt="nextPost.fields.title"
-            :title="nextPost.fields.title"
-            :to="nextPost.fields.slug"
-          />
-          <page-previous
-            v-if="prevPost"
-            :src="prevPost.fields.headerImage.fields.file.url"
-            :alt="prevPost.fields.title"
-            :title="prevPost.fields.title"
-            :to="prevPost.fields.slug"
-          />
-        </Pager>
-        <div class="l-top-button">
-          <base-button size="medium" @onClick="toTop">トップに戻る</base-button>
+        <div class="l-works-article">
+          <section class="l-section l-works">
+            <h2 class="works-name">
+              <span class="works-name__category">{{
+                category.fields.name
+              }}</span>
+              <span class="works-name__title">{{
+                currentPost.fields.title
+              }}</span>
+            </h2>
+            <!-- eslint-disable vue/no-v-html -->
+            <div
+              class="text-area"
+              v-html="$md.render(currentPost.fields.body)"
+            ></div>
+            <!-- eslint-enable -->
+          </section>
+          <Pager>
+            <page-next
+              v-if="nextPost"
+              :src="nextPost.fields.headerImage.fields.file.url"
+              :alt="nextPost.fields.title"
+              :title="nextPost.fields.title"
+              :to="nextPost.fields.slug"
+            />
+            <page-previous
+              v-if="prevPost"
+              :src="prevPost.fields.headerImage.fields.file.url"
+              :alt="prevPost.fields.title"
+              :title="prevPost.fields.title"
+              :to="prevPost.fields.slug"
+            />
+          </Pager>
+          <div class="l-top-button">
+            <base-button size="medium" @onClick="toTop"
+              >トップに戻る</base-button
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -98,10 +104,18 @@ export default {
 }
 .l-works-content {
   width: 100%;
-  max-width: 672px;
+  max-width: 1042px;
   margin: auto;
   padding: 80px 24px;
   position: relative;
+}
+.l-works-article {
+  width: 100%;
+  max-width: 672px;
+  margin: 40px auto 0;
+  @include media(md, max) {
+    margin: 24px auto 0;
+  }
 }
 .flex-column {
   display: flex;
@@ -111,12 +125,8 @@ export default {
 .l-section {
   width: 100%;
 }
-.l-works {
-  margin-top: 24px;
-}
 .work-image {
   width: 100%;
-  max-width: 672px;
   margin: auto;
   margin-top: -160px;
   @include media(md, max) {
