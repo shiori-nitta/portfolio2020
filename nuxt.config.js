@@ -1,7 +1,7 @@
 require('dotenv').config()
 const client = require('./src/plugins/contentful').default
 
-const baseTitle = `SODA Web Designer’s Portfolio`
+const baseTitle = 'SODA Web Designer’s Portfolio'
 const baseDesc = '炭酸水をこよなく愛するwebデザイナーのポートフォリオサイト'
 
 export default {
