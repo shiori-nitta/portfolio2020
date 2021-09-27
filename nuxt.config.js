@@ -32,7 +32,7 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://soda.netlify.app/',
+        content: 'https://sodasui.net/',
       },
       {
         hid: 'og:title',
@@ -47,7 +47,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://soda.netlify.app/images/ogp/common.png',
+        content: 'https://sodasui.net/images/ogp/common.png',
       },
       {
         hid: 'twitter:card',
