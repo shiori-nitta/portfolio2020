@@ -85,7 +85,9 @@ export default {
     const nextPost = relatedPosts[next]
     // meta設定
     const title = currentPost.fields.title
-    const description = `お題、${currentPost.fields.title}の制作ページです`
+    const description =
+      currentPost.fields.description ||
+      `お題、${currentPost.fields.title}の制作ページです`
     if (currentPost) {
       return {
         currentPost,
