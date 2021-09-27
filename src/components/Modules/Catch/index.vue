@@ -2,7 +2,7 @@
   <div class="catch">
     <div class="catch__title"><catch-image /></div>
     <transition appear name="fadein">
-      <p class="catch__description">WEB DESIGNER’S PORTFOLIO</p>
+      <p class="catch__description">Web Designer’s Portfolio</p>
     </transition>
   </div>
 </template>

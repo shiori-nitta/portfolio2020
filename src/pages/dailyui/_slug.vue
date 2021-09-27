@@ -55,12 +55,15 @@ import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
 
+import meta from '~/assets/mixins/meta.js'
+
 export default {
   components: {
     WorkImage,
     BaseButton,
     Pager,
   },
+  mixins: [meta],
   async asyncData({ payload, store, params, error }) {
     const currentPost =
       payload ||
@@ -80,8 +83,21 @@ export default {
     const next = index - 1
     const prevPost = relatedPosts[prev]
     const nextPost = relatedPosts[next]
+    // meta設定
+    const title = currentPost.fields.title
+    const description =
+      currentPost.fields.description ||
+      `お題、${currentPost.fields.title}の制作ページです`
     if (currentPost) {
-      return { currentPost, category, relatedPosts, index, prevPost, nextPost }
+      return {
+        currentPost,
+        category,
+        relatedPosts,
+        index,
+        prevPost,
+        nextPost,
+        meta: { title, description },
+      }
     }
     return error({ statusCode: 400 })
   },

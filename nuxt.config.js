@@ -1,8 +1,8 @@
 require('dotenv').config()
 const client = require('./src/plugins/contentful').default
 
-const baseTitle = `SODA | WEB DESIGNER’S PORTFOLIO`
-const baseDesc = 'webデザイナーのDailyUIをまとめたポートフォリオサイト'
+const baseTitle = 'SODA Web Designer’s Portfolio'
+const baseDesc = '炭酸水をこよなく愛するwebデザイナーのポートフォリオサイト'
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -32,7 +32,7 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://soda.netlify.app/',
+        content: 'https://sodasui.net/',
       },
       {
         hid: 'og:title',
@@ -47,7 +47,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://soda.netlify.app/images/ogp/common.png',
+        content: 'https://sodasui.net/images/ogp/common.png',
       },
       {
         hid: 'twitter:card',

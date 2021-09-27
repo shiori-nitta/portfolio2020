@@ -30,12 +30,15 @@
 import WorkCard from '~/components/Modules/WorkCard'
 import CardList from '~/components/Organisms/CardList'
 
+import meta from '~/assets/mixins/meta.js'
+
 export default {
   name: 'InfiniteScroll',
   components: {
     WorkCard,
     CardList,
   },
+  mixins: [meta],
   async asyncData({ payload, store, error }) {
     const currentPost =
       payload ||
@@ -53,6 +56,11 @@ export default {
   },
   data() {
     return {
+      meta: {
+        title: 'Tips',
+        description:
+          '炭酸水をこよなく愛するWebデザイナーがまとめてるデザインや技術についての一覧ページです。',
+      },
       displayPosts: [],
       pageIndex: 0,
       perPage: 12,
