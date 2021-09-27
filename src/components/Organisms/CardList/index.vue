@@ -4,11 +4,13 @@
 
 <style lang="scss" scoped>
 .card-list {
-  max-width: 1060px;
-  width: 100%;
+  width: calc(100% - 32px);
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  @include media(md, max) {
+    width: 100%;
+  }
   > * {
     width: calc((100% - 80px) / 3);
     @include media(md, max) {
