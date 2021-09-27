@@ -2,7 +2,8 @@ require('dotenv').config()
 const client = require('./src/plugins/contentful').default
 
 const baseTitle = 'SODA Web Designer’s Portfolio'
-const baseDesc = '炭酸水をこよなく愛するwebデザイナーのポートフォリオサイト'
+const baseDesc =
+  '炭酸水をこよなく愛するwebデザイナーのポートフォリオサイトです。DailyUIでの制作物を投稿しており、たまにデザインや技術についても書いていこうと思います。'
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
