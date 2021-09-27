@@ -48,11 +48,23 @@ import UserIcon from '~/components/Atoms/UserIcon'
 import BaseButton from '~/components/Atoms/BaseButton'
 import TextLink from '~/components/Atoms/TextLink'
 
+import meta from '~/assets/mixins/meta.js'
+
 export default {
   components: {
     UserIcon,
     BaseButton,
     TextLink,
+  },
+  mixins: [meta],
+  data() {
+    return {
+      meta: {
+        title: 'About',
+        description:
+          'とあるwebデザイナーのポートフォリオサイトです。ここではDailyUIで制作したものを投稿していきます。更新はゆるめです。たまにデザインや技術についても書いていこうと思います。',
+      },
+    }
   },
   methods: {
     toDaily() {

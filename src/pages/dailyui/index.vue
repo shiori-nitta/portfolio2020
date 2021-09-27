@@ -31,12 +31,15 @@ import { mapGetters } from 'vuex'
 import WorkCard from '~/components/Modules/WorkCard'
 import CardList from '~/components/Organisms/CardList'
 
+import meta from '~/assets/mixins/meta.js'
+
 export default {
   name: 'InfiniteScroll',
   components: {
     WorkCard,
     CardList,
   },
+  mixins: [meta],
   async asyncData({ payload, store, error }) {
     const currentPost =
       payload ||
@@ -54,6 +57,11 @@ export default {
   },
   data() {
     return {
+      meta: {
+        title: 'DailyUI',
+        description:
+          '炭酸水をこよなく愛するWebデザイナーが制作したDailyUIの一覧です。',
+      },
       displayPosts: [],
       pageIndex: 0,
       perPage: 12,
