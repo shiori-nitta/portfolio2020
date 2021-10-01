@@ -41,13 +41,15 @@ export default {
 .work-card {
   width: 100%;
   display: block;
-  box-shadow: 2px 2px 2px darken($bg-color, 10%);
+  filter: drop-shadow(1px 2px 4px darken($bg-color, 10%));
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.1s linear;
+  transition: all 0.2s cubic-bezier(0, 0.55, 0.45, 1);
   &:hover {
-    box-shadow: 8px 8px 16px darken($bg-color, 10%);
-    transform: translate(-4px, -4px);
+    filter: drop-shadow(1px 2px 4px darken($bg-color, 10%))
+      drop-shadow(2px 4px 8px darken($bg-color, 10%))
+      drop-shadow(4px 8px 16px darken($bg-color, 10%));
+    transform: translate(-5px, -5px);
   }
   &__thumb {
     border: 2px solid $white-color;
