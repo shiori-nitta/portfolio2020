@@ -39,7 +39,6 @@ export default {
 
 <style lang="scss" scoped>
 .work-card {
-  width: 100%;
   display: block;
   filter: drop-shadow(1px 2px 4px darken($bg-color, 10%));
   text-decoration: none;
