@@ -165,7 +165,7 @@ export default {
   },
 
   'google-gtag': {
-    id: process.env.GA_ID,
+    id: process.env.GA4_ID,
     debug: true,
   },
 }
