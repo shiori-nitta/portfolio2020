@@ -54,6 +54,8 @@
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
+import PagePrevious from '~/components/Modules/PagePrevious'
+import PageNext from '~/components/Modules/PageNext'
 
 import meta from '~/assets/mixins/meta.js'
 
@@ -62,6 +64,8 @@ export default {
     WorkImage,
     BaseButton,
     Pager,
+    PagePrevious,
+    PageNext,
   },
   mixins: [meta],
   async asyncData({ payload, store, params, error }) {

@@ -49,12 +49,16 @@
 import WorkImage from '~/components/Atoms/WorkImage'
 import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
+import PagePrevious from '~/components/Modules/PagePrevious'
+import PageNext from '~/components/Modules/PageNext'
 
 export default {
   components: {
     WorkImage,
     BaseButton,
     Pager,
+    PagePrevious,
+    PageNext,
   },
   methods: {
     onClickPrev() {
