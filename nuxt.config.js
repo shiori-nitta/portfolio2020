@@ -99,7 +99,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics',
+    '@nuxtjs/google-gtag',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -163,7 +163,9 @@ export default {
   router: {
     middleware: ['getContentful'],
   },
-  googleAnalytics: {
-    id: process.env.GA_ID,
+
+  'google-gtag': {
+    id: process.env.GA4_ID,
+    debug: true,
   },
 }
