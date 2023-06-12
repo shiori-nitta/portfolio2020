@@ -16,12 +16,11 @@
                 currentPost.fields.title
               }}</span>
             </h2>
-            <!-- eslint-disable vue/no-v-html -->
-            <div
-              class="text-area"
-              v-html="$md.render(currentPost.fields.body)"
-            ></div>
-            <!-- eslint-enable -->
+            <article-area>
+              <!-- eslint-disable vue/no-v-html -->
+              <div v-html="$md.render(currentPost.fields.body)"></div>
+              <!-- eslint-enable -->
+            </article-area>
           </section>
           <Pager>
             <page-next
@@ -56,6 +55,7 @@ import BaseButton from '~/components/Atoms/BaseButton'
 import Pager from '~/components/Organisms/Pager'
 import PagePrevious from '~/components/Modules/PagePrevious'
 import PageNext from '~/components/Modules/PageNext'
+import ArticleArea from '~/components/Atoms/ArticleArea'
 
 import meta from '~/assets/mixins/meta.js'
 
@@ -66,6 +66,7 @@ export default {
     Pager,
     PagePrevious,
     PageNext,
+    ArticleArea,
   },
   mixins: [meta],
   async asyncData({ payload, store, params, error }) {
@@ -165,155 +166,6 @@ export default {
     margin-top: 4px;
     @include font-en-bold;
     font-size: 2.8rem;
-  }
-}
-.text-area {
-  margin: 20px 0;
-  line-height: 2;
-  h1 {
-    padding: 10px 0;
-    font-size: 2.4rem;
-    line-height: 1.6;
-    border-bottom: 2px dotted lighten($text-color, 60%);
-    margin: 40px 0 20px;
-    @include font-bold;
-    @include media(md, max) {
-      font-size: 2rem;
-      margin: 32px 0 20px;
-    }
-  }
-  h2 {
-    font-size: 2rem;
-    line-height: 1.6;
-    padding-left: 16px;
-    margin-top: 40px;
-    border-left: 2px solid $text-color;
-    margin: 40px 0 20px;
-    @include font-bold;
-    @include media(md, max) {
-      font-size: 1.8rem;
-      margin: 32px 0 20px;
-    }
-  }
-  h3 {
-    margin: 20px 0;
-    font-size: 2rem;
-    line-height: 1.6;
-    display: flex;
-    @include font-bold;
-    @include media(md, max) {
-      font-size: 1.6rem;
-    }
-  }
-  p,
-  img {
-    margin: 28px 0;
-  }
-  img {
-    width: 100%;
-  }
-  a {
-    padding: 0;
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: $link-color;
-    text-decoration: none;
-    border: none;
-    background: transparent;
-    position: relative;
-    &::before {
-      display: block;
-      content: '';
-      width: 100%;
-      height: 1px;
-      background: $link-color;
-      transform: scaleX(0);
-      transform-origin: bottom left;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      transition: all 0.3s ease;
-    }
-    &:hover {
-      &::before {
-        transform: scaleX(1);
-      }
-    }
-  }
-  ul {
-    margin: 20px 0;
-    padding-left: 24px;
-    padding: 10px 30px;
-    background: lighten($text-color, 75%);
-    border-radius: 4px;
-    list-style-type: none;
-    @include media(md, max) {
-      padding: 10px 20px;
-    }
-    li {
-      margin: 10px 0;
-    }
-  }
-  blockquote {
-    padding: 10px 30px;
-    border: 1px solid lighten($text-color, 60%);
-    border-radius: 4px;
-  }
-  code {
-    margin: 0 4px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: lighten($text-color, 72%);
-    color: $text-color;
-  }
-  pre {
-    margin: 10px 0;
-    padding: 16px 24px;
-    background: $text-color;
-    border-radius: 4px;
-    overflow: scroll;
-    @include media(md, max) {
-      padding: 12px 16px;
-    }
-    code {
-      color: $white-color;
-      font-size: 1.4rem;
-      background: transparent;
-    }
-  }
-  em {
-    @include font-bold;
-  }
-  table {
-    width: 100%;
-    margin: 30px 0;
-    border-collapse: collapse;
-    border: 1px solid $border-color;
-    background: $white-color;
-  }
-  th,
-  td {
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-    border-right: 1px solid $border-color;
-  }
-  th {
-    background: lighten($text-color, 75%);
-    color: $text-color;
-    @include font-bold;
-    line-height: 1.6;
-  }
-  .video {
-    width: 100%;
-    padding-top: 56.25%;
-    position: relative;
-    iframe {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
   }
 }
 .pager {
