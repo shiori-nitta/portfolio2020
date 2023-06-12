@@ -87,6 +87,10 @@ export default {
 
 <style lang="scss">
 .l-card {
-  padding: 0 24px;
+  padding: 0 40px;
+
+  @include media(md, max) {
+    padding: 0 24px;
+  }
 }
 </style>

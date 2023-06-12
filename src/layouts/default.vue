@@ -2,6 +2,7 @@
   <div>
     <Header @onClick="toTop" />
     <Nuxt />
+    <ReturnTopButton :show-button="showButton" />
     <Footer />
   </div>
 </template>
@@ -9,13 +10,23 @@
 <script>
 import Header from '../components/Organisms/Header'
 import Footer from '../components/Modules/Footer'
+import ReturnTopButton from '../components/Atoms/ReturnTopButton'
 
 export default {
   components: {
     Header,
     Footer,
+    ReturnTopButton,
+  },
+  data() {
+    return {
+      showButton: false,
+    }
   },
   mounted() {
+    // スクロールイベントの追加
+    window.addEventListener('scroll', this.handleScroll)
+
     this.$nextTick(function () {
       this.$adobeFonts(document)
     })
@@ -85,9 +96,15 @@ export default {
       }
     }, 50)
   },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     toTop() {
       return this.$router.push(`/`)
+    },
+    handleScroll() {
+      this.showButton = window.pageYOffset > 100
     },
   },
 }
@@ -116,6 +133,17 @@ body {
   font-size: 1.6rem;
   @include font-normal;
   color: $text-color;
+}
+
+.return-button {
+  position: fixed;
+  bottom: 8px;
+  right: -8px;
+
+  @include media(md, max) {
+    bottom: 8px;
+    right: 0;
+  }
 }
 
 .page-enter-active {
