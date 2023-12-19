@@ -6,8 +6,7 @@
           <h2 class="title">このサイトについて</h2>
           <p class="text">
             とあるwebデザイナーのポートフォリオサイトです。<br />
-            ここではDailyUIで制作したものを投稿していきます。更新はゆるめです。<br />
-            たまにデザインや技術についても書いていこうと思います。
+            ここではDailyUIで制作したものやデザイン・コーディングについて投稿していきます。更新はゆるめです。<br />
           </p>
           <p class="text description">
             「DailyUI」とは、サイトにメールアドレスを登録して、土日を除く100日間メールでUIデザインのお題を送ってくれるサービスです。<br />
@@ -16,21 +15,13 @@
           <div class="section profile">
             <user-icon :src="require('@/assets/images/user-icon.png')" />
             <section class="profile__info">
-              <h3 class="sub-title">管理人：新田詩織（ソーダー）</h3>
+              <h3 class="sub-title">管理人：小谷野 詩織（ソーダー）</h3>
               <p class="text">
-                広島県出身。都内のweb制作会社に勤めているwebデザイナー。現在はリモートワークでお仕事してます。<br />
-                炭酸水をこよなく愛する。
+                広島県出身。Web制作会社に勤めているデザイナー・コーダーです。現在はリモートワークでお仕事してます。<br />
+                ハーブティーと炭酸水をこよなく愛する。
               </p>
               <div class="text">
                 <text-link @onClick="toTwitter">Twitter</text-link>
-                <!-- <dl class="profile-list">
-                  <dt>
-                    読書：<text-link @onClick="toBook">ブクログ</text-link>
-                  </dt>
-                  <dt>
-                    映画：<text-link @onClick="toMovie">Filmarks</text-link>
-                  </dt>
-                </dl> -->
               </div>
             </section>
           </div>
